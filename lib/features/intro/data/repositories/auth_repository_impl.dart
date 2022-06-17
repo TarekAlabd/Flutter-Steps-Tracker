@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_steps_tracker/core/data/data_sources/database.dart';
 import 'package:flutter_steps_tracker/core/data/error/exceptions/application_exception.dart';
 import 'package:flutter_steps_tracker/core/data/error/failures/application_failure.dart';
-import 'package:flutter_steps_tracker/core/data/services/database.dart';
 import 'package:flutter_steps_tracker/features/intro/data/data_sources/auth_local_data_source.dart';
 import 'package:flutter_steps_tracker/features/intro/data/data_sources/auth_remote_data_source.dart';
 import 'package:flutter_steps_tracker/features/intro/data/mappers/user_entity_to_model_mapper.dart';

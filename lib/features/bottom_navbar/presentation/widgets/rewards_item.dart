@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_model.dart';
 
 class RewardsItem extends StatelessWidget {
-  const RewardsItem({Key? key}) : super(key: key);
+  final RewardModel reward;
+
+  const RewardsItem({
+    Key? key,
+    required this.reward,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +23,7 @@ class RewardsItem extends StatelessWidget {
             child: Row(
               children: [
                 Image.network(
-                  'https://seeklogo.com/images/S/Starbucks_Coffee-logo-DECE0A6E4B-seeklogo.com.png',
+                  reward.imageUrl,
                   fit: BoxFit.cover,
                   height: 80,
                 ),
@@ -28,7 +34,7 @@ class RewardsItem extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Starbucks',
+                        reward.name,
                         style: Theme.of(context).textTheme.headline6!.copyWith(
                               fontWeight: FontWeight.bold,
                             ),
@@ -38,11 +44,11 @@ class RewardsItem extends StatelessWidget {
                         TextSpan(
                           children: [
                             TextSpan(
-                              text: 'Earn one cup in Starbucks by ',
+                              text: reward.description,
                               style: Theme.of(context).textTheme.subtitle1,
                             ),
                             TextSpan(
-                              text: '300 Points!',
+                              text: ' ${reward.points} Points!',
                               style: Theme.of(context)
                                   .textTheme
                                   .subtitle1!

@@ -1,10 +1,13 @@
 import 'package:flutter_steps_tracker/core/data/models/user_model.dart';
 import 'package:flutter_steps_tracker/core/data/services/firestore_services.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_model.dart';
 import 'package:flutter_steps_tracker/utilities/constants/api_path.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class Database {
   Future<void> setUserData(UserModel user);
+
+  Stream<List<RewardModel>> rewardsStream();
 }
 
 String documentIdFromLocalGenerator() => DateTime.now().toIso8601String();
@@ -21,14 +24,9 @@ class FireStoreDatabase implements Database {
     );
   }
 
-  // @override
-  // Future<void> deleteRequest(Request request) async {
-  //   await _service.deleteData(path: APIPath.request(request.id));
-  // }
-
-  // @override
-  // Stream<List<ُExample>> examplesStream() => _service.collectionStream(
-  //       path: APIPath.examples(),
-  //       builder: (data, documentId) => Example.fromMap(data, documentId),
-  //     );
+  @override
+  Stream<List<RewardModel>> rewardsStream() => _service.collectionStream(
+        path: APIPath.rewards(),
+        builder: (data, documentId) => RewardModel.fromMap(data, documentId),
+      );
 }
