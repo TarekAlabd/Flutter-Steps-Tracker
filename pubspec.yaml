@@ -1,0 +1,50 @@
+name: flutter_steps_tracker
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.3 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  flutter_localizations:
+    sdk: flutter
+  pedometer: ^3.0.0
+  firebase_core: ^1.17.1
+  firebase_auth: ^3.3.19
+  cloud_firestore: ^3.1.17
+  get_it: ^7.2.0
+  injectable: ^1.5.3
+  freezed: ^2.0.3+1
+  freezed_annotation: ^2.0.3
+  provider: ^6.0.3
+  flutter_bloc: ^8.0.1
+  equatable: ^2.0.3
+  shared_preferences: ^2.0.15
+  persistent_bottom_nav_bar_v2: ^4.2.3
+  syncfusion_flutter_gauges: ^20.1.59
+  dartz: ^0.10.1
+  logging: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner:
+  injectable_generator: ^1.5.3
+  intl: ^0.17.0
+  change_app_package_name: ^1.1.0
+
+flutter_intl:
+  enabled: true
+
+flutter:
+  uses-material-design: true
+
+  assets:
+     - assets/images/
+  #   - images/a_dot_ham.jpeg
