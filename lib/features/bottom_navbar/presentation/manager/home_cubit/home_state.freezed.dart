@@ -21,7 +21,7 @@ mixin _$HomeState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String steps) loaded,
-    required TResult Function() feedbackGain,
+    required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -30,7 +30,7 @@ mixin _$HomeState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ mixin _$HomeState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -130,7 +130,7 @@ class _$Initial implements Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String steps) loaded,
-    required TResult Function() feedbackGain,
+    required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -142,7 +142,7 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
   }) {
     return initial?.call();
@@ -154,7 +154,7 @@ class _$Initial implements Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -250,7 +250,7 @@ class _$Loading implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String steps) loaded,
-    required TResult Function() feedbackGain,
+    required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -262,7 +262,7 @@ class _$Loading implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
   }) {
     return loading?.call();
@@ -274,7 +274,7 @@ class _$Loading implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -394,7 +394,7 @@ class _$Loaded implements Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String steps) loaded,
-    required TResult Function() feedbackGain,
+    required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
   }) {
     return loaded(steps);
@@ -406,7 +406,7 @@ class _$Loaded implements Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
   }) {
     return loaded?.call(steps);
@@ -418,7 +418,7 @@ class _$Loaded implements Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -483,6 +483,7 @@ abstract class _$$FeedbackGainCopyWith<$Res> {
   factory _$$FeedbackGainCopyWith(
           _$FeedbackGain value, $Res Function(_$FeedbackGain) then) =
       __$$FeedbackGainCopyWithImpl<$Res>;
+  $Res call({String steps});
 }
 
 /// @nodoc
@@ -494,26 +495,49 @@ class __$$FeedbackGainCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 
   @override
   _$FeedbackGain get _value => super._value as _$FeedbackGain;
+
+  @override
+  $Res call({
+    Object? steps = freezed,
+  }) {
+    return _then(_$FeedbackGain(
+      steps: steps == freezed
+          ? _value.steps
+          : steps // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$FeedbackGain implements FeedbackGain {
-  const _$FeedbackGain();
+  const _$FeedbackGain({required this.steps});
+
+  @override
+  final String steps;
 
   @override
   String toString() {
-    return 'HomeState.feedbackGain()';
+    return 'HomeState.feedbackGain(steps: $steps)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FeedbackGain);
+        (other.runtimeType == runtimeType &&
+            other is _$FeedbackGain &&
+            const DeepCollectionEquality().equals(other.steps, steps));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(steps));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$FeedbackGainCopyWith<_$FeedbackGain> get copyWith =>
+      __$$FeedbackGainCopyWithImpl<_$FeedbackGain>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -521,10 +545,10 @@ class _$FeedbackGain implements FeedbackGain {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String steps) loaded,
-    required TResult Function() feedbackGain,
+    required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
   }) {
-    return feedbackGain();
+    return feedbackGain(steps);
   }
 
   @override
@@ -533,10 +557,10 @@ class _$FeedbackGain implements FeedbackGain {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
   }) {
-    return feedbackGain?.call();
+    return feedbackGain?.call(steps);
   }
 
   @override
@@ -545,12 +569,12 @@ class _$FeedbackGain implements FeedbackGain {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (feedbackGain != null) {
-      return feedbackGain();
+      return feedbackGain(steps);
     }
     return orElse();
   }
@@ -597,7 +621,12 @@ class _$FeedbackGain implements FeedbackGain {
 }
 
 abstract class FeedbackGain implements HomeState {
-  const factory FeedbackGain() = _$FeedbackGain;
+  const factory FeedbackGain({required final String steps}) = _$FeedbackGain;
+
+  String get steps => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$FeedbackGainCopyWith<_$FeedbackGain> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -665,7 +694,7 @@ class _$Error implements Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String steps) loaded,
-    required TResult Function() feedbackGain,
+    required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -677,7 +706,7 @@ class _$Error implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
   }) {
     return error?.call(message);
@@ -689,7 +718,7 @@ class _$Error implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String steps)? loaded,
-    TResult Function()? feedbackGain,
+    TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

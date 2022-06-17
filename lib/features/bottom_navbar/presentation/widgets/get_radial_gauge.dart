@@ -28,7 +28,7 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
       bloc: _homeCubit,
       listener: (context, state) {
         state.maybeWhen(
-          feedbackGain: () {
+          feedbackGain: (steps) {
             final snackBar = SnackBar(
               content:
                   const Text('Congratulations! You gained more health points'),
@@ -49,6 +49,10 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
             isLoading: true,
           ),
           loaded: (steps) => _buildRadialGauge(
+            context,
+            steps: steps,
+          ),
+          feedbackGain: (steps) => _buildRadialGauge(
             context,
             steps: steps,
           ),

@@ -23,7 +23,7 @@ class HomeCubit extends Cubit<HomeState> {
     _steps = event.steps.toString();
     emit(HomeState.loaded(steps: _steps));
     if ((oldSteps % 100) > (event.steps % 100)) {
-      emit(const HomeState.feedbackGain());
+      emit(HomeState.feedbackGain(steps: _steps));
     }
   }
 
