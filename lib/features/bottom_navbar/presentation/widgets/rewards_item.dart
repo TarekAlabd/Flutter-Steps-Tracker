@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_steps_tracker/core/presentation/widgets/show_alert_dialog.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_model.dart';
 
 class RewardsItem extends StatelessWidget {
@@ -63,7 +64,28 @@ class RewardsItem extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () => showAlertDialog(
+                            context,
+                            title: 'QR Code',
+                            contentWidget: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  Image.network(
+                                    reward.qrCode,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  const SizedBox(height: 16.0),
+                                  Text(
+                                    'Scan the QR Code and the points will be taken',
+                                    style:
+                                        Theme.of(context).textTheme.subtitle1,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            defaultActionText: 'Done',
+                          ),
                           style: ElevatedButton.styleFrom(
                             primary: Colors.white,
                             shape: RoundedRectangleBorder(
