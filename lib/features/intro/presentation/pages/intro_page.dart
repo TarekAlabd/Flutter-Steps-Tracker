@@ -5,6 +5,7 @@ import 'package:flutter_steps_tracker/di/injection_container.dart';
 import 'package:flutter_steps_tracker/features/intro/presentation/manager/auth_actions/auth_cubit.dart';
 import 'package:flutter_steps_tracker/features/intro/presentation/manager/auth_actions/auth_state.dart';
 import 'package:flutter_steps_tracker/features/intro/presentation/manager/auth_status/auth_status_cubit.dart';
+import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -19,7 +20,6 @@ class _IntroPageState extends State<IntroPage> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return BlocProvider<AuthCubit>(
       create: (context) => getIt<AuthCubit>(),
       child: Builder(
@@ -30,7 +30,7 @@ class _IntroPageState extends State<IntroPage> {
             body: Stack(
               children: [
                 Image.asset(
-                  'assets/images/man-intro.jpeg',
+                  AppAssets.manInBackgroundIntro,
                   fit: BoxFit.cover,
                   height: double.infinity,
                   width: double.infinity,
@@ -56,23 +56,22 @@ class _IntroPageState extends State<IntroPage> {
                     child: Center(
                       child: BlocConsumer<AuthCubit, AuthState>(
                         listener: (context, state) {
-                          state.maybeWhen(loggedIn: () {
-                            final cubit =
-                                BlocProvider.of<AuthStatusCubit>(context);
-                            cubit.checkAuthStatus();
-                            debugPrint('hereeeeeee');
-                            // Navigator.of(context).pop();
-                          }, error: (message) {
-                            debugPrint('Message here $message');
-                            // showCustomAlertDialog(
-                            //   context,
-                            //   message,
-                            //   isErrorDialog: true,
-                            //   errorContext: S.of(context).login,
-                            // );
-                          }, orElse: () {
-                            debugPrint('What is that!!!');
-                          });
+                          state.maybeWhen(
+                              loggedIn: () {
+                                final cubit =
+                                    BlocProvider.of<AuthStatusCubit>(context);
+                                cubit.checkAuthStatus();
+                                // Navigator.of(context).pop();
+                              },
+                              error: (message) {
+                                // showCustomAlertDialog(
+                                //   context,
+                                //   message,
+                                //   isErrorDialog: true,
+                                //   errorContext: S.of(context).login,
+                                // );
+                              },
+                              orElse: () {});
                         },
                         builder: (context, state) {
                           return state.maybeWhen(
@@ -101,8 +100,7 @@ class _IntroPageState extends State<IntroPage> {
             flex: 1,
           ),
           CachedNetworkImage(
-            imageUrl:
-                'https://iconape.com/wp-content/files/yn/145105/png/145105.png',
+            imageUrl: AppAssets.logo,
             fit: BoxFit.cover,
             color: Colors.white,
             height: 180,

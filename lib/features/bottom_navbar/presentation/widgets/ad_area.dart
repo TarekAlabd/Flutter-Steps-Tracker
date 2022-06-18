@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
 
 class AdArea extends StatelessWidget {
   const AdArea({Key? key}) : super(key: key);
@@ -35,7 +36,7 @@ class AdArea extends StatelessWidget {
               ),
               const SizedBox(width: 8.0),
               CachedNetworkImage(
-                imageUrl: 'https://cdn.emojidex.com/emoji/seal/muscle.png',
+                imageUrl: AppAssets.strongArm,
                 fit: BoxFit.cover,
                 height: 80,
               ),

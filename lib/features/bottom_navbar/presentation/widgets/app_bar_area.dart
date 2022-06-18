@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
 
 class AppBarArea extends StatelessWidget {
   const AppBarArea({Key? key}) : super(key: key);
@@ -16,8 +17,7 @@ class AppBarArea extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CachedNetworkImage(
-              imageUrl:
-                  'https://iconape.com/wp-content/files/yn/145105/png/145105.png',
+              imageUrl: AppAssets.logo,
               fit: BoxFit.cover,
               color: Colors.blue,
             ),

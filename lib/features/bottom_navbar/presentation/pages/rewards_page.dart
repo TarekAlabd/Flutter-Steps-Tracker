@@ -6,6 +6,7 @@ import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards/rewards_cubit.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards/rewards_state.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/rewards_item.dart';
+import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
 
 class RewardsPage extends StatelessWidget {
   const RewardsPage({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class RewardsPage extends StatelessWidget {
             child: Column(
               children: [
                 CachedNetworkImage(
-                  imageUrl: 'https://www.socash.io/img/thumb-milestones.png',
+                  imageUrl: AppAssets.rewardsBanner,
                   fit: BoxFit.cover,
                   height: 200,
                 ),

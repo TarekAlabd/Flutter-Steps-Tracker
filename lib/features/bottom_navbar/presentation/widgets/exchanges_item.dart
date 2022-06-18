@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/exchange_history_model.dart';
+import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
 import 'package:flutter_steps_tracker/utilities/constants/enums.dart';
 import 'package:intl/intl.dart';
 
@@ -28,8 +29,8 @@ class ExchangesItem extends StatelessWidget {
       leading: CachedNetworkImage(
         imageUrl:
             exchangeHistoryItem.title == ExchangeHistoryTitle.exchange.title
-                ? 'https://g.top4top.io/p_2359tsmp22.png'
-                : 'https://f.top4top.io/p_23591c6wg1.png',
+                ? AppAssets.exchangesIcon
+                : AppAssets.rewardsIcon,
       ),
     );
   }
