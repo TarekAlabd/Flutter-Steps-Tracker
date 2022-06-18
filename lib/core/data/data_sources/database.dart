@@ -20,7 +20,14 @@ abstract class Database {
     String uid,
   );
 
+  Future<void> setRewardOrder(
+    RewardModel reward,
+    String uid,
+  );
+
   Stream<List<RewardModel>> rewardsStream();
+
+  Stream<List<RewardModel>> myRewardsStream(String uid);
 
   Stream<List<StepsAndPointsModel>> dailyPointsStream(
     String uid,
@@ -92,5 +99,19 @@ class FireStoreDatabase implements Database {
       _service.setData(
         path: APIPath.setDailyStepsAndPoints(uid, stepsAndPoints.id),
         data: stepsAndPoints.toMap(),
+      );
+
+  @override
+  Future<void> setRewardOrder(RewardModel reward, String uid) async =>
+      _service.setData(
+        path: APIPath.setMyReward(uid, reward.id),
+        data: reward.toMap(),
+      );
+
+  @override
+  Stream<List<RewardModel>> myRewardsStream(String uid) =>
+      _service.collectionStream(
+        path: APIPath.myRewards(uid),
+        builder: (data, documentId) => RewardModel.fromMap(data, documentId),
       );
 }

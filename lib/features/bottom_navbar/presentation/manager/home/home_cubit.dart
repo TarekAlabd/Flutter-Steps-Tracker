@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/core/data/data_sources/database.dart';
-import 'package:flutter_steps_tracker/core/data/error/failures/firebase_auth_failure.dart';
 import 'package:flutter_steps_tracker/core/domain/use_cases/use_case.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/exchange_history_model.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/get_user_data_use_case.dart';
@@ -34,13 +33,6 @@ class HomeCubit extends Cubit<HomeState> {
     emit(
       result.fold(
         (failure) {
-          if (failure is FirebaseAuthFailure) {
-            failure.maybeWhen(
-                orElse: () => const HomeState.stepsError(
-                    message: 'Something went wrong!'),
-                operationNotAllowed: (message) =>
-                    HomeState.stepsError(message: message));
-          }
           return const HomeState.stepsError(message: 'Something went wrong!');
         },
         (userData) => HomeState.stepsAndPointsLoaded(

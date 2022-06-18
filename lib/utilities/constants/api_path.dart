@@ -4,6 +4,10 @@ class APIPath {
   static String setDailyStepsAndPoints(String uid, String id) =>
       'users/$uid/dailyPoints/$id';
 
+  static String setMyReward(String uid, String id) => 'users/$uid/rewards/$id';
+
+  static String myRewards(String uid) => 'users/$uid/rewards/';
+
   static String dailyStepsAndPointsStream(String uid) =>
       'users/$uid/dailyPoints/';
 

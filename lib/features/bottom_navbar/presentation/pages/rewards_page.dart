@@ -17,6 +17,7 @@ class RewardsPage extends StatelessWidget {
       create: (context) {
         final cubit = getIt<RewardsCubit>();
         cubit.getRewards();
+        cubit.getUserPoints();
         return cubit;
       },
       child: Builder(builder: (context) {

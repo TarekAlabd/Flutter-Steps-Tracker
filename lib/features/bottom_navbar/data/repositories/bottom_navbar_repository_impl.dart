@@ -104,4 +104,20 @@ class BottomNavbarRepositoryImpl implements BottomNavbarRepository {
       );
     }
   }
+
+  @override
+  Future<Either<Failure, bool>> earnAReward(RewardModel reward) async {
+    try {
+      final user = await _authLocalDataSource.currentUser();
+      await _database.setRewardOrder(
+        reward,
+        user!.uid,
+      );
+      return const Right(true);
+    } on ApplicationException catch (e) {
+      return Left(
+        firebaseExceptionsDecoder(e),
+      );
+    }
+  }
 }

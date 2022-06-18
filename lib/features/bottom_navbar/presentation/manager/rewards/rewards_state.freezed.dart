@@ -20,24 +20,42 @@ mixin _$RewardsState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
     required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
     required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
     TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
     TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
     TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
     TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,24 +63,42 @@ mixin _$RewardsState {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
     required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
     required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
     TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
     TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -124,8 +160,14 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
     required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
     required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
   }) {
     return initial();
   }
@@ -135,8 +177,14 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
     TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
     TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
   }) {
     return initial?.call();
   }
@@ -146,8 +194,14 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
     TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
     TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -161,8 +215,14 @@ class _$Initial implements Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
     required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
     required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
   }) {
     return initial(this);
   }
@@ -172,8 +232,14 @@ class _$Initial implements Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
     TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
   }) {
     return initial?.call(this);
   }
@@ -183,8 +249,14 @@ class _$Initial implements Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
     TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -238,8 +310,14 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
     required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
     required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
   }) {
     return loading();
   }
@@ -249,8 +327,14 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
     TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
     TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
   }) {
     return loading?.call();
   }
@@ -260,8 +344,14 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
     TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
     TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -275,8 +365,14 @@ class _$Loading implements Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
     required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
     required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
   }) {
     return loading(this);
   }
@@ -286,8 +382,14 @@ class _$Loading implements Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
     TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
   }) {
     return loading?.call(this);
   }
@@ -297,8 +399,14 @@ class _$Loading implements Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
     TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -310,6 +418,311 @@ class _$Loading implements Loading {
 
 abstract class Loading implements RewardsState {
   const factory Loading() = _$Loading;
+}
+
+/// @nodoc
+abstract class _$$EarnLoadingCopyWith<$Res> {
+  factory _$$EarnLoadingCopyWith(
+          _$EarnLoading value, $Res Function(_$EarnLoading) then) =
+      __$$EarnLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EarnLoadingCopyWithImpl<$Res> extends _$RewardsStateCopyWithImpl<$Res>
+    implements _$$EarnLoadingCopyWith<$Res> {
+  __$$EarnLoadingCopyWithImpl(
+      _$EarnLoading _value, $Res Function(_$EarnLoading) _then)
+      : super(_value, (v) => _then(v as _$EarnLoading));
+
+  @override
+  _$EarnLoading get _value => super._value as _$EarnLoading;
+}
+
+/// @nodoc
+
+class _$EarnLoading implements EarnLoading {
+  const _$EarnLoading();
+
+  @override
+  String toString() {
+    return 'RewardsState.earnLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EarnLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
+    required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
+    required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
+  }) {
+    return earnLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+  }) {
+    return earnLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (earnLoading != null) {
+      return earnLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
+    required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
+  }) {
+    return earnLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+  }) {
+    return earnLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (earnLoading != null) {
+      return earnLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EarnLoading implements RewardsState {
+  const factory EarnLoading() = _$EarnLoading;
+}
+
+/// @nodoc
+abstract class _$$UserDataLoadingCopyWith<$Res> {
+  factory _$$UserDataLoadingCopyWith(
+          _$UserDataLoading value, $Res Function(_$UserDataLoading) then) =
+      __$$UserDataLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UserDataLoadingCopyWithImpl<$Res>
+    extends _$RewardsStateCopyWithImpl<$Res>
+    implements _$$UserDataLoadingCopyWith<$Res> {
+  __$$UserDataLoadingCopyWithImpl(
+      _$UserDataLoading _value, $Res Function(_$UserDataLoading) _then)
+      : super(_value, (v) => _then(v as _$UserDataLoading));
+
+  @override
+  _$UserDataLoading get _value => super._value as _$UserDataLoading;
+}
+
+/// @nodoc
+
+class _$UserDataLoading implements UserDataLoading {
+  const _$UserDataLoading();
+
+  @override
+  String toString() {
+    return 'RewardsState.userDataLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UserDataLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
+    required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
+    required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
+  }) {
+    return userDataLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+  }) {
+    return userDataLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (userDataLoading != null) {
+      return userDataLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
+    required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
+  }) {
+    return userDataLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+  }) {
+    return userDataLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (userDataLoading != null) {
+      return userDataLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserDataLoading implements RewardsState {
+  const factory UserDataLoading() = _$UserDataLoading;
 }
 
 /// @nodoc
@@ -381,8 +794,14 @@ class _$Loaded implements Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
     required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
     required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
   }) {
     return loaded(rewards);
   }
@@ -392,8 +811,14 @@ class _$Loaded implements Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
     TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
     TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
   }) {
     return loaded?.call(rewards);
   }
@@ -403,8 +828,14 @@ class _$Loaded implements Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
     TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
     TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -418,8 +849,14 @@ class _$Loaded implements Loaded {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
     required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
     required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
   }) {
     return loaded(this);
   }
@@ -429,8 +866,14 @@ class _$Loaded implements Loaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
     TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
   }) {
     return loaded?.call(this);
   }
@@ -440,8 +883,14 @@ class _$Loaded implements Loaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
     TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -457,6 +906,340 @@ abstract class Loaded implements RewardsState {
   List<RewardModel> get rewards => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$LoadedCopyWith<_$Loaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EarnLoadedCopyWith<$Res> {
+  factory _$$EarnLoadedCopyWith(
+          _$EarnLoaded value, $Res Function(_$EarnLoaded) then) =
+      __$$EarnLoadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EarnLoadedCopyWithImpl<$Res> extends _$RewardsStateCopyWithImpl<$Res>
+    implements _$$EarnLoadedCopyWith<$Res> {
+  __$$EarnLoadedCopyWithImpl(
+      _$EarnLoaded _value, $Res Function(_$EarnLoaded) _then)
+      : super(_value, (v) => _then(v as _$EarnLoaded));
+
+  @override
+  _$EarnLoaded get _value => super._value as _$EarnLoaded;
+}
+
+/// @nodoc
+
+class _$EarnLoaded implements EarnLoaded {
+  const _$EarnLoaded();
+
+  @override
+  String toString() {
+    return 'RewardsState.earnLoaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EarnLoaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
+    required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
+    required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
+  }) {
+    return earnLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+  }) {
+    return earnLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (earnLoaded != null) {
+      return earnLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
+    required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
+  }) {
+    return earnLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+  }) {
+    return earnLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (earnLoaded != null) {
+      return earnLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EarnLoaded implements RewardsState {
+  const factory EarnLoaded() = _$EarnLoaded;
+}
+
+/// @nodoc
+abstract class _$$UserDataLoadedCopyWith<$Res> {
+  factory _$$UserDataLoadedCopyWith(
+          _$UserDataLoaded value, $Res Function(_$UserDataLoaded) then) =
+      __$$UserDataLoadedCopyWithImpl<$Res>;
+  $Res call({int points});
+}
+
+/// @nodoc
+class __$$UserDataLoadedCopyWithImpl<$Res>
+    extends _$RewardsStateCopyWithImpl<$Res>
+    implements _$$UserDataLoadedCopyWith<$Res> {
+  __$$UserDataLoadedCopyWithImpl(
+      _$UserDataLoaded _value, $Res Function(_$UserDataLoaded) _then)
+      : super(_value, (v) => _then(v as _$UserDataLoaded));
+
+  @override
+  _$UserDataLoaded get _value => super._value as _$UserDataLoaded;
+
+  @override
+  $Res call({
+    Object? points = freezed,
+  }) {
+    return _then(_$UserDataLoaded(
+      points: points == freezed
+          ? _value.points
+          : points // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserDataLoaded implements UserDataLoaded {
+  const _$UserDataLoaded({required this.points});
+
+  @override
+  final int points;
+
+  @override
+  String toString() {
+    return 'RewardsState.userDataLoaded(points: $points)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserDataLoaded &&
+            const DeepCollectionEquality().equals(other.points, points));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(points));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$UserDataLoadedCopyWith<_$UserDataLoaded> get copyWith =>
+      __$$UserDataLoadedCopyWithImpl<_$UserDataLoaded>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
+    required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
+    required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
+  }) {
+    return userDataLoaded(points);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+  }) {
+    return userDataLoaded?.call(points);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (userDataLoaded != null) {
+      return userDataLoaded(points);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
+    required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
+  }) {
+    return userDataLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+  }) {
+    return userDataLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (userDataLoaded != null) {
+      return userDataLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserDataLoaded implements RewardsState {
+  const factory UserDataLoaded({required final int points}) = _$UserDataLoaded;
+
+  int get points => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$UserDataLoadedCopyWith<_$UserDataLoaded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -524,8 +1307,14 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
     required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
     required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
   }) {
     return error(message);
   }
@@ -535,8 +1324,14 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
     TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
     TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
   }) {
     return error?.call(message);
   }
@@ -546,8 +1341,14 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
     TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
     TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -561,8 +1362,14 @@ class _$Error implements Error {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
     required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
     required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
   }) {
     return error(this);
   }
@@ -572,8 +1379,14 @@ class _$Error implements Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
     TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
   }) {
     return error?.call(this);
   }
@@ -583,8 +1396,14 @@ class _$Error implements Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
     TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
     TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -600,4 +1419,368 @@ abstract class Error implements RewardsState {
   String get message => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$ErrorCopyWith<_$Error> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$EarnErrorCopyWith<$Res> {
+  factory _$$EarnErrorCopyWith(
+          _$EarnError value, $Res Function(_$EarnError) then) =
+      __$$EarnErrorCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$EarnErrorCopyWithImpl<$Res> extends _$RewardsStateCopyWithImpl<$Res>
+    implements _$$EarnErrorCopyWith<$Res> {
+  __$$EarnErrorCopyWithImpl(
+      _$EarnError _value, $Res Function(_$EarnError) _then)
+      : super(_value, (v) => _then(v as _$EarnError));
+
+  @override
+  _$EarnError get _value => super._value as _$EarnError;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$EarnError(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EarnError implements EarnError {
+  const _$EarnError({required this.message});
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'RewardsState.earnError(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EarnError &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$EarnErrorCopyWith<_$EarnError> get copyWith =>
+      __$$EarnErrorCopyWithImpl<_$EarnError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
+    required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
+    required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
+  }) {
+    return earnError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+  }) {
+    return earnError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (earnError != null) {
+      return earnError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
+    required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
+  }) {
+    return earnError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+  }) {
+    return earnError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (earnError != null) {
+      return earnError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EarnError implements RewardsState {
+  const factory EarnError({required final String message}) = _$EarnError;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$EarnErrorCopyWith<_$EarnError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UserDataErrorCopyWith<$Res> {
+  factory _$$UserDataErrorCopyWith(
+          _$UserDataError value, $Res Function(_$UserDataError) then) =
+      __$$UserDataErrorCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$UserDataErrorCopyWithImpl<$Res>
+    extends _$RewardsStateCopyWithImpl<$Res>
+    implements _$$UserDataErrorCopyWith<$Res> {
+  __$$UserDataErrorCopyWithImpl(
+      _$UserDataError _value, $Res Function(_$UserDataError) _then)
+      : super(_value, (v) => _then(v as _$UserDataError));
+
+  @override
+  _$UserDataError get _value => super._value as _$UserDataError;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$UserDataError(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UserDataError implements UserDataError {
+  const _$UserDataError({required this.message});
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'RewardsState.userDataError(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserDataError &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$UserDataErrorCopyWith<_$UserDataError> get copyWith =>
+      __$$UserDataErrorCopyWithImpl<_$UserDataError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() earnLoading,
+    required TResult Function() userDataLoading,
+    required TResult Function(List<RewardModel> rewards) loaded,
+    required TResult Function() earnLoaded,
+    required TResult Function(int points) userDataLoaded,
+    required TResult Function(String message) error,
+    required TResult Function(String message) earnError,
+    required TResult Function(String message) userDataError,
+  }) {
+    return userDataError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+  }) {
+    return userDataError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? earnLoading,
+    TResult Function()? userDataLoading,
+    TResult Function(List<RewardModel> rewards)? loaded,
+    TResult Function()? earnLoaded,
+    TResult Function(int points)? userDataLoaded,
+    TResult Function(String message)? error,
+    TResult Function(String message)? earnError,
+    TResult Function(String message)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (userDataError != null) {
+      return userDataError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(EarnLoading value) earnLoading,
+    required TResult Function(UserDataLoading value) userDataLoading,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(EarnLoaded value) earnLoaded,
+    required TResult Function(UserDataLoaded value) userDataLoaded,
+    required TResult Function(Error value) error,
+    required TResult Function(EarnError value) earnError,
+    required TResult Function(UserDataError value) userDataError,
+  }) {
+    return userDataError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+  }) {
+    return userDataError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(EarnLoading value)? earnLoading,
+    TResult Function(UserDataLoading value)? userDataLoading,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(EarnLoaded value)? earnLoaded,
+    TResult Function(UserDataLoaded value)? userDataLoaded,
+    TResult Function(Error value)? error,
+    TResult Function(EarnError value)? earnError,
+    TResult Function(UserDataError value)? userDataError,
+    required TResult orElse(),
+  }) {
+    if (userDataError != null) {
+      return userDataError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserDataError implements RewardsState {
+  const factory UserDataError({required final String message}) =
+      _$UserDataError;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$UserDataErrorCopyWith<_$UserDataError> get copyWith =>
+      throw _privateConstructorUsedError;
 }

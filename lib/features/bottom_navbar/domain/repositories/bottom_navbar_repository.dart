@@ -16,4 +16,6 @@ abstract class BottomNavbarRepository {
   Future<Either<Failure, bool>> setStepsAndPoints(int stepsParams);
 
   Future<Either<Failure, UserModel>> getUserData();
+
+  Future<Either<Failure, bool>> earnAReward(RewardModel reward);
 }
