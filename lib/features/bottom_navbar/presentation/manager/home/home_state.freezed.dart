@@ -20,6 +20,9 @@ mixin _$HomeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() stepsAndPointsLoading,
+    required TResult Function(int steps, int healthPoints) stepsAndPointsLoaded,
+    required TResult Function(String message) stepsError,
     required TResult Function(String steps) loaded,
     required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
@@ -29,6 +32,9 @@ mixin _$HomeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -38,6 +44,9 @@ mixin _$HomeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -48,6 +57,10 @@ mixin _$HomeState {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(StepsAndPointsLoading value)
+        stepsAndPointsLoading,
+    required TResult Function(StepsAndPointsLoaded value) stepsAndPointsLoaded,
+    required TResult Function(StepsError value) stepsError,
     required TResult Function(Loaded value) loaded,
     required TResult Function(FeedbackGain value) feedbackGain,
     required TResult Function(Error value) error,
@@ -57,6 +70,9 @@ mixin _$HomeState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -66,6 +82,9 @@ mixin _$HomeState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -129,6 +148,9 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() stepsAndPointsLoading,
+    required TResult Function(int steps, int healthPoints) stepsAndPointsLoaded,
+    required TResult Function(String message) stepsError,
     required TResult Function(String steps) loaded,
     required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
@@ -141,6 +163,9 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -153,6 +178,9 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -169,6 +197,10 @@ class _$Initial implements Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(StepsAndPointsLoading value)
+        stepsAndPointsLoading,
+    required TResult Function(StepsAndPointsLoaded value) stepsAndPointsLoaded,
+    required TResult Function(StepsError value) stepsError,
     required TResult Function(Loaded value) loaded,
     required TResult Function(FeedbackGain value) feedbackGain,
     required TResult Function(Error value) error,
@@ -181,6 +213,9 @@ class _$Initial implements Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -193,6 +228,9 @@ class _$Initial implements Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -249,6 +287,9 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() stepsAndPointsLoading,
+    required TResult Function(int steps, int healthPoints) stepsAndPointsLoaded,
+    required TResult Function(String message) stepsError,
     required TResult Function(String steps) loaded,
     required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
@@ -261,6 +302,9 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -273,6 +317,9 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -289,6 +336,10 @@ class _$Loading implements Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(StepsAndPointsLoading value)
+        stepsAndPointsLoading,
+    required TResult Function(StepsAndPointsLoaded value) stepsAndPointsLoaded,
+    required TResult Function(StepsError value) stepsError,
     required TResult Function(Loaded value) loaded,
     required TResult Function(FeedbackGain value) feedbackGain,
     required TResult Function(Error value) error,
@@ -301,6 +352,9 @@ class _$Loading implements Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -313,6 +367,9 @@ class _$Loading implements Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -327,6 +384,505 @@ class _$Loading implements Loading {
 
 abstract class Loading implements HomeState {
   const factory Loading() = _$Loading;
+}
+
+/// @nodoc
+abstract class _$$StepsAndPointsLoadingCopyWith<$Res> {
+  factory _$$StepsAndPointsLoadingCopyWith(_$StepsAndPointsLoading value,
+          $Res Function(_$StepsAndPointsLoading) then) =
+      __$$StepsAndPointsLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$StepsAndPointsLoadingCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res>
+    implements _$$StepsAndPointsLoadingCopyWith<$Res> {
+  __$$StepsAndPointsLoadingCopyWithImpl(_$StepsAndPointsLoading _value,
+      $Res Function(_$StepsAndPointsLoading) _then)
+      : super(_value, (v) => _then(v as _$StepsAndPointsLoading));
+
+  @override
+  _$StepsAndPointsLoading get _value => super._value as _$StepsAndPointsLoading;
+}
+
+/// @nodoc
+
+class _$StepsAndPointsLoading implements StepsAndPointsLoading {
+  const _$StepsAndPointsLoading();
+
+  @override
+  String toString() {
+    return 'HomeState.stepsAndPointsLoading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$StepsAndPointsLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() stepsAndPointsLoading,
+    required TResult Function(int steps, int healthPoints) stepsAndPointsLoaded,
+    required TResult Function(String message) stepsError,
+    required TResult Function(String steps) loaded,
+    required TResult Function(String steps) feedbackGain,
+    required TResult Function(String message) error,
+  }) {
+    return stepsAndPointsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
+    TResult Function(String steps)? loaded,
+    TResult Function(String steps)? feedbackGain,
+    TResult Function(String message)? error,
+  }) {
+    return stepsAndPointsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
+    TResult Function(String steps)? loaded,
+    TResult Function(String steps)? feedbackGain,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (stepsAndPointsLoading != null) {
+      return stepsAndPointsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(StepsAndPointsLoading value)
+        stepsAndPointsLoading,
+    required TResult Function(StepsAndPointsLoaded value) stepsAndPointsLoaded,
+    required TResult Function(StepsError value) stepsError,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(FeedbackGain value) feedbackGain,
+    required TResult Function(Error value) error,
+  }) {
+    return stepsAndPointsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(FeedbackGain value)? feedbackGain,
+    TResult Function(Error value)? error,
+  }) {
+    return stepsAndPointsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(FeedbackGain value)? feedbackGain,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (stepsAndPointsLoading != null) {
+      return stepsAndPointsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StepsAndPointsLoading implements HomeState {
+  const factory StepsAndPointsLoading() = _$StepsAndPointsLoading;
+}
+
+/// @nodoc
+abstract class _$$StepsAndPointsLoadedCopyWith<$Res> {
+  factory _$$StepsAndPointsLoadedCopyWith(_$StepsAndPointsLoaded value,
+          $Res Function(_$StepsAndPointsLoaded) then) =
+      __$$StepsAndPointsLoadedCopyWithImpl<$Res>;
+  $Res call({int steps, int healthPoints});
+}
+
+/// @nodoc
+class __$$StepsAndPointsLoadedCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res>
+    implements _$$StepsAndPointsLoadedCopyWith<$Res> {
+  __$$StepsAndPointsLoadedCopyWithImpl(_$StepsAndPointsLoaded _value,
+      $Res Function(_$StepsAndPointsLoaded) _then)
+      : super(_value, (v) => _then(v as _$StepsAndPointsLoaded));
+
+  @override
+  _$StepsAndPointsLoaded get _value => super._value as _$StepsAndPointsLoaded;
+
+  @override
+  $Res call({
+    Object? steps = freezed,
+    Object? healthPoints = freezed,
+  }) {
+    return _then(_$StepsAndPointsLoaded(
+      steps: steps == freezed
+          ? _value.steps
+          : steps // ignore: cast_nullable_to_non_nullable
+              as int,
+      healthPoints: healthPoints == freezed
+          ? _value.healthPoints
+          : healthPoints // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$StepsAndPointsLoaded implements StepsAndPointsLoaded {
+  const _$StepsAndPointsLoaded(
+      {required this.steps, required this.healthPoints});
+
+  @override
+  final int steps;
+  @override
+  final int healthPoints;
+
+  @override
+  String toString() {
+    return 'HomeState.stepsAndPointsLoaded(steps: $steps, healthPoints: $healthPoints)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StepsAndPointsLoaded &&
+            const DeepCollectionEquality().equals(other.steps, steps) &&
+            const DeepCollectionEquality()
+                .equals(other.healthPoints, healthPoints));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(steps),
+      const DeepCollectionEquality().hash(healthPoints));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$StepsAndPointsLoadedCopyWith<_$StepsAndPointsLoaded> get copyWith =>
+      __$$StepsAndPointsLoadedCopyWithImpl<_$StepsAndPointsLoaded>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() stepsAndPointsLoading,
+    required TResult Function(int steps, int healthPoints) stepsAndPointsLoaded,
+    required TResult Function(String message) stepsError,
+    required TResult Function(String steps) loaded,
+    required TResult Function(String steps) feedbackGain,
+    required TResult Function(String message) error,
+  }) {
+    return stepsAndPointsLoaded(steps, healthPoints);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
+    TResult Function(String steps)? loaded,
+    TResult Function(String steps)? feedbackGain,
+    TResult Function(String message)? error,
+  }) {
+    return stepsAndPointsLoaded?.call(steps, healthPoints);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
+    TResult Function(String steps)? loaded,
+    TResult Function(String steps)? feedbackGain,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (stepsAndPointsLoaded != null) {
+      return stepsAndPointsLoaded(steps, healthPoints);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(StepsAndPointsLoading value)
+        stepsAndPointsLoading,
+    required TResult Function(StepsAndPointsLoaded value) stepsAndPointsLoaded,
+    required TResult Function(StepsError value) stepsError,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(FeedbackGain value) feedbackGain,
+    required TResult Function(Error value) error,
+  }) {
+    return stepsAndPointsLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(FeedbackGain value)? feedbackGain,
+    TResult Function(Error value)? error,
+  }) {
+    return stepsAndPointsLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(FeedbackGain value)? feedbackGain,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (stepsAndPointsLoaded != null) {
+      return stepsAndPointsLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StepsAndPointsLoaded implements HomeState {
+  const factory StepsAndPointsLoaded(
+      {required final int steps,
+      required final int healthPoints}) = _$StepsAndPointsLoaded;
+
+  int get steps => throw _privateConstructorUsedError;
+  int get healthPoints => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$StepsAndPointsLoadedCopyWith<_$StepsAndPointsLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$StepsErrorCopyWith<$Res> {
+  factory _$$StepsErrorCopyWith(
+          _$StepsError value, $Res Function(_$StepsError) then) =
+      __$$StepsErrorCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$StepsErrorCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+    implements _$$StepsErrorCopyWith<$Res> {
+  __$$StepsErrorCopyWithImpl(
+      _$StepsError _value, $Res Function(_$StepsError) _then)
+      : super(_value, (v) => _then(v as _$StepsError));
+
+  @override
+  _$StepsError get _value => super._value as _$StepsError;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$StepsError(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$StepsError implements StepsError {
+  const _$StepsError({required this.message});
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'HomeState.stepsError(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StepsError &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$StepsErrorCopyWith<_$StepsError> get copyWith =>
+      __$$StepsErrorCopyWithImpl<_$StepsError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() stepsAndPointsLoading,
+    required TResult Function(int steps, int healthPoints) stepsAndPointsLoaded,
+    required TResult Function(String message) stepsError,
+    required TResult Function(String steps) loaded,
+    required TResult Function(String steps) feedbackGain,
+    required TResult Function(String message) error,
+  }) {
+    return stepsError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
+    TResult Function(String steps)? loaded,
+    TResult Function(String steps)? feedbackGain,
+    TResult Function(String message)? error,
+  }) {
+    return stepsError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
+    TResult Function(String steps)? loaded,
+    TResult Function(String steps)? feedbackGain,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (stepsError != null) {
+      return stepsError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initial value) initial,
+    required TResult Function(Loading value) loading,
+    required TResult Function(StepsAndPointsLoading value)
+        stepsAndPointsLoading,
+    required TResult Function(StepsAndPointsLoaded value) stepsAndPointsLoaded,
+    required TResult Function(StepsError value) stepsError,
+    required TResult Function(Loaded value) loaded,
+    required TResult Function(FeedbackGain value) feedbackGain,
+    required TResult Function(Error value) error,
+  }) {
+    return stepsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(FeedbackGain value)? feedbackGain,
+    TResult Function(Error value)? error,
+  }) {
+    return stepsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initial value)? initial,
+    TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
+    TResult Function(Loaded value)? loaded,
+    TResult Function(FeedbackGain value)? feedbackGain,
+    TResult Function(Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (stepsError != null) {
+      return stepsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StepsError implements HomeState {
+  const factory StepsError({required final String message}) = _$StepsError;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$StepsErrorCopyWith<_$StepsError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -393,6 +949,9 @@ class _$Loaded implements Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() stepsAndPointsLoading,
+    required TResult Function(int steps, int healthPoints) stepsAndPointsLoaded,
+    required TResult Function(String message) stepsError,
     required TResult Function(String steps) loaded,
     required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
@@ -405,6 +964,9 @@ class _$Loaded implements Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -417,6 +979,9 @@ class _$Loaded implements Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -433,6 +998,10 @@ class _$Loaded implements Loaded {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(StepsAndPointsLoading value)
+        stepsAndPointsLoading,
+    required TResult Function(StepsAndPointsLoaded value) stepsAndPointsLoaded,
+    required TResult Function(StepsError value) stepsError,
     required TResult Function(Loaded value) loaded,
     required TResult Function(FeedbackGain value) feedbackGain,
     required TResult Function(Error value) error,
@@ -445,6 +1014,9 @@ class _$Loaded implements Loaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -457,6 +1029,9 @@ class _$Loaded implements Loaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -544,6 +1119,9 @@ class _$FeedbackGain implements FeedbackGain {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() stepsAndPointsLoading,
+    required TResult Function(int steps, int healthPoints) stepsAndPointsLoaded,
+    required TResult Function(String message) stepsError,
     required TResult Function(String steps) loaded,
     required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
@@ -556,6 +1134,9 @@ class _$FeedbackGain implements FeedbackGain {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -568,6 +1149,9 @@ class _$FeedbackGain implements FeedbackGain {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -584,6 +1168,10 @@ class _$FeedbackGain implements FeedbackGain {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(StepsAndPointsLoading value)
+        stepsAndPointsLoading,
+    required TResult Function(StepsAndPointsLoaded value) stepsAndPointsLoaded,
+    required TResult Function(StepsError value) stepsError,
     required TResult Function(Loaded value) loaded,
     required TResult Function(FeedbackGain value) feedbackGain,
     required TResult Function(Error value) error,
@@ -596,6 +1184,9 @@ class _$FeedbackGain implements FeedbackGain {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -608,6 +1199,9 @@ class _$FeedbackGain implements FeedbackGain {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -693,6 +1287,9 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() stepsAndPointsLoading,
+    required TResult Function(int steps, int healthPoints) stepsAndPointsLoaded,
+    required TResult Function(String message) stepsError,
     required TResult Function(String steps) loaded,
     required TResult Function(String steps) feedbackGain,
     required TResult Function(String message) error,
@@ -705,6 +1302,9 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -717,6 +1317,9 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? stepsAndPointsLoading,
+    TResult Function(int steps, int healthPoints)? stepsAndPointsLoaded,
+    TResult Function(String message)? stepsError,
     TResult Function(String steps)? loaded,
     TResult Function(String steps)? feedbackGain,
     TResult Function(String message)? error,
@@ -733,6 +1336,10 @@ class _$Error implements Error {
   TResult map<TResult extends Object?>({
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
+    required TResult Function(StepsAndPointsLoading value)
+        stepsAndPointsLoading,
+    required TResult Function(StepsAndPointsLoaded value) stepsAndPointsLoaded,
+    required TResult Function(StepsError value) stepsError,
     required TResult Function(Loaded value) loaded,
     required TResult Function(FeedbackGain value) feedbackGain,
     required TResult Function(Error value) error,
@@ -745,6 +1352,9 @@ class _$Error implements Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,
@@ -757,6 +1367,9 @@ class _$Error implements Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
+    TResult Function(StepsAndPointsLoading value)? stepsAndPointsLoading,
+    TResult Function(StepsAndPointsLoaded value)? stepsAndPointsLoaded,
+    TResult Function(StepsError value)? stepsError,
     TResult Function(Loaded value)? loaded,
     TResult Function(FeedbackGain value)? feedbackGain,
     TResult Function(Error value)? error,

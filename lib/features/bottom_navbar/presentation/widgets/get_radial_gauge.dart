@@ -29,13 +29,8 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
       listener: (context, state) {
         state.maybeWhen(
           feedbackGain: (steps) {
-            final snackBar = SnackBar(
-              content:
-                  const Text('Congratulations! You gained more health points'),
-              action: SnackBarAction(
-                label: 'Cool!',
-                onPressed: () => Navigator.of(context).pop(),
-              ),
+            const snackBar = SnackBar(
+              content: Text('Congratulations! You gained more health points'),
             );
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
           },

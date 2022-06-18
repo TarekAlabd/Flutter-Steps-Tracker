@@ -8,6 +8,9 @@ import 'package:flutter_steps_tracker/utilities/routes/router.dart';
 import 'package:flutter_steps_tracker/utilities/routes/routes.dart';
 import 'package:flutter_steps_tracker/utilities/theme_data.dart';
 
+// TODO: It's not good to do many workarounds as I did in this project
+// but I had to do that because currently, I don't have server-side service
+
 Future<void> main() async {
   await _initialize();
   runApp(const MyApp());

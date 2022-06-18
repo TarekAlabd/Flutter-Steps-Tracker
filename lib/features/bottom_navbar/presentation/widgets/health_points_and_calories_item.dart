@@ -4,17 +4,17 @@ class HealthPointsAndCaloriesItem extends StatelessWidget {
   final Color color;
   final String mainTitle;
   final IconData iconData;
-  final int number;
+  final String number;
   final String unit;
 
-  const HealthPointsAndCaloriesItem(
-      {Key? key,
-      this.color = Colors.blue,
-      required this.mainTitle,
-      required this.iconData,
-      this.number = 0,
-      this.unit = 'Kcal'})
-      : super(key: key);
+  const HealthPointsAndCaloriesItem({
+    Key? key,
+    this.color = Colors.blue,
+    required this.mainTitle,
+    required this.iconData,
+    this.number = '-',
+    this.unit = '',
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,13 +26,16 @@ class HealthPointsAndCaloriesItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
                   iconData,
                   size: 30,
                 ),
+                const SizedBox(width: 4.0),
                 Text.rich(
                   TextSpan(
                     children: [
@@ -42,12 +45,14 @@ class HealthPointsAndCaloriesItem extends StatelessWidget {
                               color: Colors.white,
                             ),
                       ),
-                      TextSpan(
-                        text: ' $unit',
-                        style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                              color: Colors.white,
-                            ),
-                      ),
+                      if (unit.isNotEmpty)
+                        TextSpan(
+                          text: ' $unit',
+                          style:
+                              Theme.of(context).textTheme.subtitle1!.copyWith(
+                                    color: Colors.white,
+                                  ),
+                        ),
                     ],
                   ),
                 )
