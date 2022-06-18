@@ -58,12 +58,11 @@ class BottomNavbarRepositoryImpl implements BottomNavbarRepository {
   Future<Either<Failure, bool>> setStepsAndPoints(int steps) async {
     try {
       final user = await _authLocalDataSource.currentUser();
-      var totalSteps = user!.totalSteps + steps;
-      int healthPoints = ((totalSteps / 100) * 5) as int;
+      int healthPoints = (steps ~/ 100) * 5;
       final newUser = UserModel(
-        uid: user.uid,
+        uid: user!.uid,
         name: user.name,
-        totalSteps: totalSteps,
+        totalSteps: steps,
         healthPoints: healthPoints,
       );
       await _database.setUserData(newUser);
