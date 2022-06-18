@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/core/data/data_sources/database.dart';
-import 'package:flutter_steps_tracker/features/bottom_navbar/domain/entities/exchange_history_entity.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/exchange_history_model.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/set_exchange_history_use_case.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home_cubit/home_state.dart';
 import 'package:flutter_steps_tracker/utilities/constants/enums.dart';
@@ -34,10 +34,10 @@ class HomeCubit extends Cubit<HomeState> {
     if ((oldSteps % 100) > (event.steps % 100)) {
       emit(HomeState.feedbackGain(steps: _steps));
       await _setExchangeHistoryUseCase(
-        ExchangeHistoryEntity(
+        ExchangeHistoryModel(
           id: documentIdFromLocalGenerator(),
           title: ExchangeHistoryTitle.exchange.title,
-          date: DateTime.now(),
+          date: DateTime.now().toIso8601String(),
         ),
       );
     }

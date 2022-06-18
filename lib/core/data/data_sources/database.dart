@@ -14,6 +14,8 @@ abstract class Database {
   );
 
   Stream<List<RewardModel>> rewardsStream();
+
+  Stream<List<ExchangeHistoryModel>> exchangeHistoryStream(String uid);
 }
 
 String documentIdFromLocalGenerator() => DateTime.now().toIso8601String();
@@ -45,5 +47,13 @@ class FireStoreDatabase implements Database {
   Stream<List<RewardModel>> rewardsStream() => _service.collectionStream(
         path: APIPath.rewards(),
         builder: (data, documentId) => RewardModel.fromMap(data, documentId),
+      );
+
+  @override
+  Stream<List<ExchangeHistoryModel>> exchangeHistoryStream(String uid) =>
+      _service.collectionStream(
+        path: APIPath.exchangesHistory(uid),
+        builder: (data, documentId) =>
+            ExchangeHistoryModel.fromMap(data, documentId),
       );
 }

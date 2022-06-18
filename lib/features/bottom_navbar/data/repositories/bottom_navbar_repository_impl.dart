@@ -2,9 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_steps_tracker/core/data/data_sources/database.dart';
 import 'package:flutter_steps_tracker/core/data/error/exceptions/application_exception.dart';
 import 'package:flutter_steps_tracker/core/data/error/failures/application_failure.dart';
-import 'package:flutter_steps_tracker/features/bottom_navbar/data/mappers/exchange_history_to_model_mappers.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/exchange_history_model.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_model.dart';
-import 'package:flutter_steps_tracker/features/bottom_navbar/domain/entities/exchange_history_entity.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/domain/repositories/bottom_navbar_repository.dart';
 import 'package:flutter_steps_tracker/features/intro/data/data_sources/auth_local_data_source.dart';
 import 'package:injectable/injectable.dart';
@@ -26,14 +25,27 @@ class BottomNavbarRepositoryImpl implements BottomNavbarRepository {
 
   @override
   Future<Either<Failure, bool>> setExchangeHistory(
-      ExchangeHistoryEntity exchangeHistory) async {
+      ExchangeHistoryModel exchangeHistory) async {
     try {
       final user = await _authLocalDataSource.currentUser();
       await _database.setExchangeHistory(
-        exchangeHistory.toModel(),
+        exchangeHistory,
         user!.uid,
       );
       return const Right(true);
+    } on ApplicationException catch (e) {
+      return Left(
+        firebaseExceptionsDecoder(e),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Stream<List<ExchangeHistoryModel>>>>
+      exchangesHistoryStream() async {
+    try {
+      final user = await _authLocalDataSource.currentUser();
+      return Right(_database.exchangeHistoryStream(user!.uid));
     } on ApplicationException catch (e) {
       return Left(
         firebaseExceptionsDecoder(e),

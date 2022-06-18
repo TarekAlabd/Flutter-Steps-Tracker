@@ -1,4 +1,7 @@
-class ExchangeHistoryModel {
+import 'package:equatable/equatable.dart';
+
+// TODO: We will use this model as an entity too just for simplicity now
+class ExchangeHistoryModel extends Equatable {
   final String id;
   final String title;
   final String date;
@@ -27,4 +30,7 @@ class ExchangeHistoryModel {
       date: map['date'] as String,
     );
   }
+
+  @override
+  List<Object?> get props => [id];
 }
