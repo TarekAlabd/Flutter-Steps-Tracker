@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/di/injection_container.dart';
@@ -99,8 +100,9 @@ class _IntroPageState extends State<IntroPage> {
           const Spacer(
             flex: 1,
           ),
-          Image.network(
-            'https://iconape.com/wp-content/files/yn/145105/png/145105.png',
+          CachedNetworkImage(
+            imageUrl:
+                'https://iconape.com/wp-content/files/yn/145105/png/145105.png',
             fit: BoxFit.cover,
             color: Colors.white,
             height: 180,

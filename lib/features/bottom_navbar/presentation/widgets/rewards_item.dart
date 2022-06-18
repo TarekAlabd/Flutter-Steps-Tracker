@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_steps_tracker/core/presentation/widgets/show_alert_dialog.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_model.dart';
@@ -23,8 +24,8 @@ class RewardsItem extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Row(
               children: [
-                Image.network(
-                  reward.imageUrl,
+                CachedNetworkImage(
+                  imageUrl: reward.imageUrl,
                   fit: BoxFit.cover,
                   height: 80,
                 ),
@@ -71,8 +72,8 @@ class RewardsItem extends StatelessWidget {
                               padding: const EdgeInsets.all(8.0),
                               child: Column(
                                 children: [
-                                  Image.network(
-                                    reward.qrCode,
+                                  CachedNetworkImage(
+                                    imageUrl: reward.qrCode,
                                     fit: BoxFit.cover,
                                   ),
                                   const SizedBox(height: 16.0),

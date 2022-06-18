@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class AppBarArea extends StatelessWidget {
@@ -14,8 +15,9 @@ class AppBarArea extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.network(
-              'https://iconape.com/wp-content/files/yn/145105/png/145105.png',
+            CachedNetworkImage(
+              imageUrl:
+                  'https://iconape.com/wp-content/files/yn/145105/png/145105.png',
               fit: BoxFit.cover,
               color: Colors.blue,
             ),

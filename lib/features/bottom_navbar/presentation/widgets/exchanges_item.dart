@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/exchange_history_model.dart';
 import 'package:flutter_steps_tracker/utilities/constants/enums.dart';
@@ -24,10 +25,11 @@ class ExchangesItem extends StatelessWidget {
       subtitle: Text(
         date,
       ),
-      leading: Image.network(
-        exchangeHistoryItem.title == ExchangeHistoryTitle.exchange.title
-            ? 'https://g.top4top.io/p_2359tsmp22.png'
-            : 'https://f.top4top.io/p_23591c6wg1.png',
+      leading: CachedNetworkImage(
+        imageUrl:
+            exchangeHistoryItem.title == ExchangeHistoryTitle.exchange.title
+                ? 'https://g.top4top.io/p_2359tsmp22.png'
+                : 'https://f.top4top.io/p_23591c6wg1.png',
       ),
     );
   }

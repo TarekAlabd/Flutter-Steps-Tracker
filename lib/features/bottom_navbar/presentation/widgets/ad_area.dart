@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class AdArea extends StatelessWidget {
@@ -33,8 +34,8 @@ class AdArea extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 8.0),
-              Image.network(
-                'https://cdn.emojidex.com/emoji/seal/muscle.png',
+              CachedNetworkImage(
+                imageUrl: 'https://cdn.emojidex.com/emoji/seal/muscle.png',
                 fit: BoxFit.cover,
                 height: 80,
               ),
