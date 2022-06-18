@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter_steps_tracker/core/data/data_sources/database.dart';
 import 'package:flutter_steps_tracker/core/data/error/exceptions/application_exception.dart';
 import 'package:flutter_steps_tracker/core/data/error/failures/application_failure.dart';
@@ -27,7 +26,6 @@ class AuthRepositoryImpl extends AuthRepository {
   Future<Either<Failure, bool>> signInAnonymously(String name) async {
     try {
       final user = await _authRemoteDataSource.signInAnonymously();
-      debugPrint('User here: ${user?.uid}');
       final newUser = UserEntity(
         name: name,
         uid: user?.uid,

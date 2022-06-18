@@ -11,4 +11,6 @@ abstract class BottomNavbarRepository {
 
   Future<Either<Failure, bool>> setExchangeHistory(
       ExchangeHistoryModel exchangeHistory);
+
+  Future<Either<Failure, bool>> setStepsAndPoints(int steps);
 }

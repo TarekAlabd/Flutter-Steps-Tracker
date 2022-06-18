@@ -31,6 +31,8 @@ class ExchangesItem extends StatelessWidget {
             exchangeHistoryItem.title == ExchangeHistoryTitle.exchange.title
                 ? AppAssets.exchangesIcon
                 : AppAssets.rewardsIcon,
+        height: 50,
+        width: 50,
       ),
     );
   }
