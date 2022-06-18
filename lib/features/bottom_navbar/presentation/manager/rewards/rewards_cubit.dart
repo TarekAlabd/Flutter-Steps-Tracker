@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/core/domain/use_cases/use_case.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_model.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/get_rewards_use_case.dart';
-import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards_cubit/rewards_state.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards/rewards_state.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

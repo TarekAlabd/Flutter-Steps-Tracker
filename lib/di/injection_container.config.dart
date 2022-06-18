@@ -14,14 +14,18 @@ import '../features/bottom_navbar/data/repositories/bottom_navbar_repository_imp
     as _i13;
 import '../features/bottom_navbar/domain/repositories/bottom_navbar_repository.dart'
     as _i12;
-import '../features/bottom_navbar/domain/use_cases/get_rewards_use_case.dart'
+import '../features/bottom_navbar/domain/use_cases/get_exchanges_history_use_case.dart'
     as _i15;
-import '../features/bottom_navbar/domain/use_cases/set_exchange_history_use_case.dart'
-    as _i17;
-import '../features/bottom_navbar/presentation/manager/home_cubit/home_cubit.dart'
-    as _i21;
-import '../features/bottom_navbar/presentation/manager/rewards_cubit/rewards_cubit.dart'
+import '../features/bottom_navbar/domain/use_cases/get_rewards_use_case.dart'
     as _i16;
+import '../features/bottom_navbar/domain/use_cases/set_exchange_history_use_case.dart'
+    as _i18;
+import '../features/bottom_navbar/presentation/manager/exchanges_history/exchanges_history_cubit.dart'
+    as _i22;
+import '../features/bottom_navbar/presentation/manager/home/home_cubit.dart'
+    as _i23;
+import '../features/bottom_navbar/presentation/manager/rewards/rewards_cubit.dart'
+    as _i17;
 import '../features/intro/data/data_sources/auth_local_data_source.dart' as _i8;
 import '../features/intro/data/data_sources/auth_remote_data_source.dart'
     as _i4;
@@ -30,13 +34,13 @@ import '../features/intro/data/services/auth_services.dart' as _i3;
 import '../features/intro/domain/repositories/auth_repository.dart' as _i9;
 import '../features/intro/domain/use_cases/auth_status_use_case.dart' as _i11;
 import '../features/intro/domain/use_cases/sign_in_anonymously_use_case.dart'
-    as _i18;
-import '../features/intro/presentation/manager/auth_actions/auth_cubit.dart'
     as _i19;
-import '../features/intro/presentation/manager/auth_status/auth_status_cubit.dart'
+import '../features/intro/presentation/manager/auth_actions/auth_cubit.dart'
     as _i20;
+import '../features/intro/presentation/manager/auth_status/auth_status_cubit.dart'
+    as _i21;
 import '../utilities/locale/cubit/locale_cubit.dart' as _i6;
-import 'app_module.dart' as _i22; // ignore_for_file: unnecessary_lambdas
+import 'app_module.dart' as _i24; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -63,21 +67,25 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       get<_i5.Database>(), get<_i8.AuthLocalDataSource>()));
   gh.singleton<_i14.CacheHelper>(
       _i14.CacheHelperImpl(get<_i7.SharedPreferences>()));
-  gh.factory<_i15.GetRewardsUseCase>(
-      () => _i15.GetRewardsUseCase(get<_i12.BottomNavbarRepository>()));
-  gh.factory<_i16.RewardsCubit>(
-      () => _i16.RewardsCubit(get<_i15.GetRewardsUseCase>()));
-  gh.factory<_i17.SetExchangeHistoryUseCase>(
-      () => _i17.SetExchangeHistoryUseCase(get<_i12.BottomNavbarRepository>()));
-  gh.factory<_i18.SignInAnonymouslyUseCase>(() =>
-      _i18.SignInAnonymouslyUseCase(authRepository: get<_i9.AuthRepository>()));
-  gh.singleton<_i19.AuthCubit>(
-      _i19.AuthCubit(get<_i18.SignInAnonymouslyUseCase>()));
-  gh.singleton<_i20.AuthStatusCubit>(
-      _i20.AuthStatusCubit(get<_i11.AuthStatusUseCase>()));
-  gh.factory<_i21.HomeCubit>(
-      () => _i21.HomeCubit(get<_i17.SetExchangeHistoryUseCase>()));
+  gh.factory<_i15.GetHistoryExchangesUseCase>(() =>
+      _i15.GetHistoryExchangesUseCase(get<_i12.BottomNavbarRepository>()));
+  gh.factory<_i16.GetRewardsUseCase>(
+      () => _i16.GetRewardsUseCase(get<_i12.BottomNavbarRepository>()));
+  gh.factory<_i17.RewardsCubit>(
+      () => _i17.RewardsCubit(get<_i16.GetRewardsUseCase>()));
+  gh.factory<_i18.SetExchangeHistoryUseCase>(
+      () => _i18.SetExchangeHistoryUseCase(get<_i12.BottomNavbarRepository>()));
+  gh.factory<_i19.SignInAnonymouslyUseCase>(() =>
+      _i19.SignInAnonymouslyUseCase(authRepository: get<_i9.AuthRepository>()));
+  gh.singleton<_i20.AuthCubit>(
+      _i20.AuthCubit(get<_i19.SignInAnonymouslyUseCase>()));
+  gh.singleton<_i21.AuthStatusCubit>(
+      _i21.AuthStatusCubit(get<_i11.AuthStatusUseCase>()));
+  gh.factory<_i22.ExchangesHistoryCubit>(
+      () => _i22.ExchangesHistoryCubit(get<_i15.GetHistoryExchangesUseCase>()));
+  gh.factory<_i23.HomeCubit>(
+      () => _i23.HomeCubit(get<_i18.SetExchangeHistoryUseCase>()));
   return get;
 }
 
-class _$AppModule extends _i22.AppModule {}
+class _$AppModule extends _i24.AppModule {}

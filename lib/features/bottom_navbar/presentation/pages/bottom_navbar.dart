@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/pages/exchanges_page.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/pages/home_page.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/pages/rewards_page.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/app_bar_area.dart';
@@ -18,7 +19,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
   List<Widget> _buildScreens() {
     return [
       const HomePage(),
-      Container(),
+      const ExchangesHistoryPage(),
       const RewardsPage(),
       Container(),
     ];

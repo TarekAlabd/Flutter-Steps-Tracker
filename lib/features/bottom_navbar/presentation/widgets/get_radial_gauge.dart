@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/di/injection_container.dart';
-import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home_cubit/home_cubit.dart';
-import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home_cubit/home_state.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home/home_cubit.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home/home_state.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class GetRadialGauge extends StatefulWidget {

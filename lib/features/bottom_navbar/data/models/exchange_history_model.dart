@@ -5,11 +5,13 @@ class ExchangeHistoryModel extends Equatable {
   final String id;
   final String title;
   final String date;
+  final int points;
 
   const ExchangeHistoryModel({
     required this.id,
     required this.title,
     required this.date,
+    required this.points,
   });
 
   Map<String, dynamic> toMap() {
@@ -17,6 +19,7 @@ class ExchangeHistoryModel extends Equatable {
       'id': id,
       'title': title,
       'date': date,
+      'points': points,
     };
   }
 
@@ -28,6 +31,7 @@ class ExchangeHistoryModel extends Equatable {
       id: documentId,
       title: map['title'] as String,
       date: map['date'] as String,
+      points: map['points'] as int,
     );
   }
 

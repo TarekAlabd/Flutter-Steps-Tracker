@@ -24,7 +24,7 @@ class AuthLocalDataSourceImpl extends AuthLocalDataSource {
           json.decode(_sharedPreferences.getString(KeyConstants.currentUser)!);
       final user = UserModel.fromMap(
         currentUserAsJSON,
-        currentUserAsJSON['id'] ?? '',
+        currentUserAsJSON['uid'] ?? '',
       );
       return user;
     }

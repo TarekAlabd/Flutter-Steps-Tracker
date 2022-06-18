@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/core/data/data_sources/database.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/exchange_history_model.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/set_exchange_history_use_case.dart';
-import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home_cubit/home_state.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home/home_state.dart';
 import 'package:flutter_steps_tracker/utilities/constants/enums.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pedometer/pedometer.dart';
@@ -38,6 +38,7 @@ class HomeCubit extends Cubit<HomeState> {
           id: documentIdFromLocalGenerator(),
           title: ExchangeHistoryTitle.exchange.title,
           date: DateTime.now().toIso8601String(),
+          points: 5,
         ),
       );
     }

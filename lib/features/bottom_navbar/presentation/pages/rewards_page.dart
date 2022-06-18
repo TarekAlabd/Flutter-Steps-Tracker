@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/di/injection_container.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_model.dart';
-import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards_cubit/rewards_cubit.dart';
-import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards_cubit/rewards_state.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards/rewards_cubit.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards/rewards_state.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/rewards_item.dart';
 
 class RewardsPage extends StatelessWidget {
@@ -11,7 +11,7 @@ class RewardsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<RewardsCubit>(
       create: (context) {
         final cubit = getIt<RewardsCubit>();
         cubit.getRewards();

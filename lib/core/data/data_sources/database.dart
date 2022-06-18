@@ -50,10 +50,11 @@ class FireStoreDatabase implements Database {
       );
 
   @override
-  Stream<List<ExchangeHistoryModel>> exchangeHistoryStream(String uid) =>
-      _service.collectionStream(
-        path: APIPath.exchangesHistory(uid),
-        builder: (data, documentId) =>
-            ExchangeHistoryModel.fromMap(data, documentId),
-      );
+  Stream<List<ExchangeHistoryModel>> exchangeHistoryStream(String uid) {
+    return _service.collectionStream(
+      path: APIPath.exchangesHistory(uid),
+      builder: (data, documentId) =>
+          ExchangeHistoryModel.fromMap(data, documentId),
+    );
+  }
 }
