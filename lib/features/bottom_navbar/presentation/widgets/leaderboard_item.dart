@@ -1,19 +1,17 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_steps_tracker/core/data/models/user_model.dart';
+import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
 
 class LeaderboardItem extends StatelessWidget {
-  final String name;
-  final String imageUrl;
+  final UserModel item;
   final int sNumber;
-  final int numberOfPoints;
 
   const LeaderboardItem({
     Key? key,
-    required this.name,
-    required this.imageUrl,
+    required this.item,
     required this.sNumber,
-    required this.numberOfPoints,
   }) : super(key: key);
 
   @override
@@ -38,22 +36,22 @@ class LeaderboardItem extends StatelessWidget {
         Expanded(
           child: Row(
             children: [
-              CircleAvatar(
+              const CircleAvatar(
                 radius: 20,
                 backgroundImage: CachedNetworkImageProvider(
-                  imageUrl,
+                  AppAssets.dummyUserImage,
                 ),
               ),
               const SizedBox(width: 12.0),
               Text(
-                name,
+                item.name,
                 style: Theme.of(context).textTheme.subtitle1!.copyWith(
                       fontWeight: FontWeight.w600,
                     ),
               ),
               const Spacer(),
               Text(
-                numberOfPoints.toString(),
+                item.totalSteps.toString(),
                 style: Theme.of(context).textTheme.headline6!.copyWith(
                       color: Colors.blue,
                       fontWeight: FontWeight.w600,

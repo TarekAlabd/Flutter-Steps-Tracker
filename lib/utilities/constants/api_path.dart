@@ -1,5 +1,6 @@
 class APIPath {
   static String user(String uid) => 'users/$uid';
+  static String users() => 'users/';
 
   static String setDailyStepsAndPoints(String uid, String id) =>
       'users/$uid/dailyPoints/$id';

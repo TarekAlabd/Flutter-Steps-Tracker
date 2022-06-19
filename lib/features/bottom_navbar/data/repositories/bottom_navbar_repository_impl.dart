@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter_steps_tracker/core/data/data_sources/database.dart';
 import 'package:flutter_steps_tracker/core/data/error/exceptions/application_exception.dart';
@@ -112,6 +114,17 @@ class BottomNavbarRepositoryImpl implements BottomNavbarRepository {
         user!.uid,
       );
       return const Right(true);
+    } on ApplicationException catch (e) {
+      return Left(
+        firebaseExceptionsDecoder(e),
+      );
+    }
+  }
+
+  @override
+  Future<Either<Failure, Stream<List<UserModel>>>> usersStream() async {
+    try {
+      return Right(_database.usersStream());
     } on ApplicationException catch (e) {
       return Left(
         firebaseExceptionsDecoder(e),

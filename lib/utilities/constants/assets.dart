@@ -4,6 +4,8 @@ class AppAssets {
       'https://iconape.com/wp-content/files/yn/145105/png/145105.png';
   static const String rewardsBanner =
       'https://www.socash.io/img/thumb-milestones.png';
+  static const String dummyUserImage =
+      'https://www.business2community.com/wp-content/plugins/wp-user-avatars/wp-user-avatars/assets/images/mystery.jpg';
   static const String strongArm =
       'https://cdn.emojidex.com/emoji/seal/muscle.png';
   static const String exchangesIcon = 'https://g.top4top.io/p_2359tsmp22.png';

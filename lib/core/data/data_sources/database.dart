@@ -27,6 +27,8 @@ abstract class Database {
 
   Stream<List<RewardModel>> rewardsStream();
 
+  Stream<List<UserModel>> usersStream();
+
   Stream<List<RewardModel>> myRewardsStream(String uid);
 
   Stream<List<StepsAndPointsModel>> dailyPointsStream(
@@ -113,5 +115,11 @@ class FireStoreDatabase implements Database {
       _service.collectionStream(
         path: APIPath.myRewards(uid),
         builder: (data, documentId) => RewardModel.fromMap(data, documentId),
+      );
+
+  @override
+  Stream<List<UserModel>> usersStream() => _service.collectionStream(
+        path: APIPath.users(),
+        builder: (data, documentId) => UserModel.fromMap(data, documentId),
       );
 }

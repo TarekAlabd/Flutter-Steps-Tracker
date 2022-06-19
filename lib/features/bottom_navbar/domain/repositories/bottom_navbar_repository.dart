@@ -7,6 +7,8 @@ import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_
 abstract class BottomNavbarRepository {
   Stream<List<RewardModel>> rewardsStream();
 
+  Future<Either<Failure, Stream<List<UserModel>>>> usersStream();
+
   Future<Either<Failure, Stream<List<ExchangeHistoryModel>>>>
       exchangesHistoryStream();
 
