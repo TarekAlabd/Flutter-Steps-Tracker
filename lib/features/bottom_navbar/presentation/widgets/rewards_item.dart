@@ -159,11 +159,11 @@ class _RewardsItemState extends State<RewardsItem> {
               }
             : null,
         style: ElevatedButton.styleFrom(
-          primary: Colors.white,
+          primary: Theme.of(context).scaffoldBackgroundColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
-            side: const BorderSide(
-              color: Colors.blue,
+            side: BorderSide(
+              color: Theme.of(context).primaryColor,
             ),
           ),
         ),
@@ -171,7 +171,7 @@ class _RewardsItemState extends State<RewardsItem> {
             ? Text(
                 'Earn',
                 style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
               )
             : const CircularProgressIndicator(),

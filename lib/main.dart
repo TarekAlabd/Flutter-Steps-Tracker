@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/di/injection_container.dart';
 import 'package:flutter_steps_tracker/features/intro/presentation/manager/auth_status/auth_status_cubit.dart';
 import 'package:flutter_steps_tracker/utilities/locale/cubit/locale_cubit.dart';
+import 'package:flutter_steps_tracker/utilities/locale/theme_data.dart';
 import 'package:flutter_steps_tracker/utilities/routes/router.dart';
 import 'package:flutter_steps_tracker/utilities/routes/routes.dart';
-import 'package:flutter_steps_tracker/utilities/theme_data.dart';
 
 // TODO: It's not good to do many workarounds as I did in this project
 // but I had to do that because currently, I don't have server-side service

@@ -35,14 +35,14 @@ class _IntroPageState extends State<IntroPage> {
                   height: double.infinity,
                   width: double.infinity,
                 ),
-                const SizedBox(
+                SizedBox(
                   height: double.infinity,
                   width: double.infinity,
                   child: Opacity(
                     opacity: 0.8,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                   ),
@@ -102,13 +102,13 @@ class _IntroPageState extends State<IntroPage> {
           CachedNetworkImage(
             imageUrl: AppAssets.logo,
             fit: BoxFit.cover,
-            color: Colors.white,
+            color: Theme.of(context).scaffoldBackgroundColor,
             height: 180,
           ),
           Text(
             'Your All-in one Activity Tracker!',
             style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                  color: Colors.white,
+                  color: Theme.of(context).scaffoldBackgroundColor,
                 ),
           ),
           const Spacer(
@@ -136,7 +136,7 @@ class _IntroPageState extends State<IntroPage> {
               width: double.infinity,
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Colors.white,
+                  color: Theme.of(context).scaffoldBackgroundColor,
                 ),
                 borderRadius: BorderRadius.circular(24.0),
               ),
@@ -145,7 +145,7 @@ class _IntroPageState extends State<IntroPage> {
                     ? Text(
                         'Start Using Steps',
                         style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                               fontWeight: FontWeight.bold,
                             ),
                       )

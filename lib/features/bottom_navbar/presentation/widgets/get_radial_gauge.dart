@@ -67,7 +67,7 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
       title: GaugeTitle(
         text: 'Total Steps Today',
         textStyle: Theme.of(context).textTheme.headline5!.copyWith(
-              color: Colors.blue,
+              color: Theme.of(context).primaryColor,
             ),
       ),
       axes: <RadialAxis>[
@@ -81,14 +81,14 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
                           text: '$steps\n',
                           style:
                               Theme.of(context).textTheme.headline2!.copyWith(
-                                    color: Colors.blue,
+                                    color: Theme.of(context).primaryColor,
                                   ),
                         ),
                         TextSpan(
                           text: 'Step Goal:\n',
                           style:
                               Theme.of(context).textTheme.subtitle1!.copyWith(
-                                    color: Colors.red,
+                                    color: Theme.of(context).errorColor,
                                     fontWeight: FontWeight.w400,
                                   ),
                         ),
@@ -96,7 +96,7 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
                           text: '8000\n',
                           style:
                               Theme.of(context).textTheme.subtitle1!.copyWith(
-                                    color: Colors.red,
+                                    color: Theme.of(context).errorColor,
                                     fontWeight: FontWeight.w400,
                                   ),
                         ),
@@ -111,7 +111,7 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
               // TODO: Dummy equation for now until targeting each one's target
               // Our target is 8000 steps daily, do more sports!!!!
               value: ((double.tryParse(steps)!) / 8000) * 100,
-              color: Colors.blue,
+              color: Theme.of(context).primaryColor,
               dashArray: const <double>[8, 2],
             ),
           ],

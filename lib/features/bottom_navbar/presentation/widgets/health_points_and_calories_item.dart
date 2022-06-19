@@ -42,16 +42,19 @@ class HealthPointsAndCaloriesItem extends StatelessWidget {
                       TextSpan(
                         text: number.toString(),
                         style: Theme.of(context).textTheme.headline5!.copyWith(
-                              color: Colors.white,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                             ),
                       ),
                       if (unit.isNotEmpty)
                         TextSpan(
                           text: ' $unit',
-                          style:
-                              Theme.of(context).textTheme.subtitle1!.copyWith(
-                                    color: Colors.white,
-                                  ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .subtitle1!
+                              .copyWith(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                              ),
                         ),
                     ],
                   ),
@@ -62,7 +65,7 @@ class HealthPointsAndCaloriesItem extends StatelessWidget {
             Text(
               mainTitle,
               style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                    color: Colors.white,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                   ),
             ),
           ],

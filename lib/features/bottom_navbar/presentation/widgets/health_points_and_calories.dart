@@ -62,7 +62,7 @@ class _HealthPointsAndCaloriesState extends State<HealthPointsAndCalories> {
             mainTitle: 'Total Steps',
             number: isLoading ? '-' : steps.toString(),
             iconData: Icons.bubble_chart_rounded,
-            color: Colors.redAccent,
+            color: Theme.of(context).backgroundColor,
           ),
         ),
       ],

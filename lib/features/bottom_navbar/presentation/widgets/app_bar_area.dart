@@ -19,17 +19,17 @@ class AppBarArea extends StatelessWidget {
             CachedNetworkImage(
               imageUrl: AppAssets.logo,
               fit: BoxFit.cover,
-              color: Colors.blue,
+              color: Theme.of(context).primaryColor,
             ),
             Text(
               'Pedometer',
               style: Theme.of(context).textTheme.headline6!.copyWith(
-                    color: Colors.blue,
+                    color: Theme.of(context).primaryColor,
                   ),
             ),
-            const Icon(
+            Icon(
               Icons.sunny,
-              color: Colors.amber,
+              color: Theme.of(context).primaryColor,
               size: 25,
             ),
           ],

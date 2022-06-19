@@ -29,27 +29,27 @@ class _BottomNavbarState extends State<BottomNavbar> {
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: Icon(CupertinoIcons.home),
+        icon: const Icon(CupertinoIcons.home),
         title: ("Home"),
-        activeColorPrimary: CupertinoColors.activeBlue,
+        activeColorPrimary: Theme.of(context).primaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.track_changes),
+        icon: const Icon(Icons.track_changes),
         title: ("History"),
-        activeColorPrimary: CupertinoColors.activeBlue,
+        activeColorPrimary: Theme.of(context).primaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.card_giftcard),
+        icon: const Icon(Icons.card_giftcard),
         title: ("Rewards"),
-        activeColorPrimary: CupertinoColors.activeBlue,
+        activeColorPrimary: Theme.of(context).primaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.developer_board),
+        icon: const Icon(Icons.developer_board),
         title: ("Board"),
-        activeColorPrimary: CupertinoColors.activeBlue,
+        activeColorPrimary: Theme.of(context).primaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
     ];
@@ -70,8 +70,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
           screens: _buildScreens(),
           items: _navBarsItems(),
           confineInSafeArea: true,
-          backgroundColor: Colors.white,
-          // Default is Colors.white.
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           handleAndroidBackButtonPress: true,
           // Default is true.
           resizeToAvoidBottomInset: true,
@@ -82,16 +81,16 @@ class _BottomNavbarState extends State<BottomNavbar> {
           // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
           decoration: NavBarDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            colorBehindNavBar: Colors.white,
+            colorBehindNavBar: Theme.of(context).scaffoldBackgroundColor,
           ),
           popAllScreensOnTapOfSelectedTab: true,
           popActionScreens: PopActionScreensType.all,
-          itemAnimationProperties: ItemAnimationProperties(
+          itemAnimationProperties: const ItemAnimationProperties(
             // Navigation Bar's items animation properties.
             duration: Duration(milliseconds: 200),
             curve: Curves.ease,
           ),
-          screenTransitionAnimation: ScreenTransitionAnimation(
+          screenTransitionAnimation: const ScreenTransitionAnimation(
             // Screen transition animation on change of selected tab.
             animateTabTransition: true,
             curve: Curves.ease,

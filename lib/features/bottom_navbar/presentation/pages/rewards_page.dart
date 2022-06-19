@@ -38,7 +38,7 @@ class RewardsPage extends StatelessWidget {
                 Text(
                   'Available Rewards',
                   style: Theme.of(context).textTheme.headline5!.copyWith(
-                        color: Colors.blue,
+                        color: Theme.of(context).primaryColor,
                       ),
                 ),
                 const SizedBox(height: 12.0),

@@ -25,9 +25,9 @@ class LeaderboardTopItem extends StatelessWidget {
           style: Theme.of(context).textTheme.headline6,
         ),
         const SizedBox(height: 4.0),
-        const Icon(
+        Icon(
           CupertinoIcons.arrowtriangle_up_fill,
-          color: Colors.blue,
+          color: Theme.of(context).primaryColor,
         ),
         const SizedBox(height: 8.0),
         CircleAvatar(
@@ -49,7 +49,7 @@ class LeaderboardTopItem extends StatelessWidget {
         Text(
           item.totalSteps.toString(),
           style: Theme.of(context).textTheme.headline6!.copyWith(
-                color: Colors.blue,
+                color: Theme.of(context).primaryColor,
                 fontWeight: FontWeight.w600,
               ),
         ),

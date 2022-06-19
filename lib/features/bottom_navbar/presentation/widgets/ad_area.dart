@@ -13,7 +13,7 @@ class AdArea extends StatelessWidget {
       height: size.height * 0.12,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: Colors.blue,
+          color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(24.0),
         ),
         child: Padding(
@@ -28,7 +28,7 @@ class AdArea extends StatelessWidget {
                     Text(
                       'More coming soon!',
                       style: Theme.of(context).textTheme.headline6!.copyWith(
-                            color: Colors.white,
+                            color: Theme.of(context).scaffoldBackgroundColor,
                           ),
                     ),
                   ],

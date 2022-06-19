@@ -25,9 +25,9 @@ class LeaderboardItem extends StatelessWidget {
               sNumber.toString(),
               style: Theme.of(context).textTheme.subtitle1,
             ),
-            const Icon(
+            Icon(
               CupertinoIcons.arrowtriangle_up_fill,
-              color: Colors.blue,
+              color: Theme.of(context).primaryColor,
               size: 20,
             ),
           ],
@@ -53,7 +53,7 @@ class LeaderboardItem extends StatelessWidget {
               Text(
                 item.totalSteps.toString(),
                 style: Theme.of(context).textTheme.headline6!.copyWith(
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.w600,
                     ),
               ),
