@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/pages/exchanges_page.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/pages/home_page.dart';
+import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/pages/leaderboard_page.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/pages/rewards_page.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/app_bar_area.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
@@ -21,7 +22,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
       const HomePage(),
       const ExchangesHistoryPage(),
       const RewardsPage(),
-      Container(),
+      const LeaderboardPage(),
     ];
   }
 
