@@ -22,11 +22,12 @@ class ExchangesHistoryPage extends StatelessWidget {
           bloc: BlocProvider.of<ExchangesHistoryCubit>(context),
           builder: (context, state) {
             return state.maybeWhen(
-              loading: () => _buildExchangesList(isLoading: false),
+              loading: () => _buildExchangesList(context, isLoading: false),
               loaded: (exchanges) => _buildExchangesList(
+                context,
                 exchanges: exchanges,
               ),
-              orElse: () => _buildExchangesList(),
+              orElse: () => _buildExchangesList(context),
             );
           },
         );
@@ -34,7 +35,8 @@ class ExchangesHistoryPage extends StatelessWidget {
     );
   }
 
-  Widget _buildExchangesList(
+  /// TODO: Refactor this to a separate class
+  Widget _buildExchangesList(BuildContext context,
       {bool isLoading = false, List<ExchangeHistoryModel>? exchanges}) {
     if (isLoading) {
       return const Center(
@@ -54,11 +56,7 @@ class ExchangesHistoryPage extends StatelessWidget {
                           ExchangesItem(
                             exchangeHistoryItem: e,
                           ),
-                          const Divider(
-                            thickness: 1,
-                            indent: 16,
-                            endIndent: 16,
-                          ),
+                          const Divider(),
                         ],
                       ),
                     )

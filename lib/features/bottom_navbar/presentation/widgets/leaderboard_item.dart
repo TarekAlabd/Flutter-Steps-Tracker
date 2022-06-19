@@ -23,11 +23,13 @@ class LeaderboardItem extends StatelessWidget {
           children: [
             Text(
               sNumber.toString(),
-              style: Theme.of(context).textTheme.subtitle1,
+              style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                    color: Theme.of(context).primaryColorDark,
+                  ),
             ),
             Icon(
               CupertinoIcons.arrowtriangle_up_fill,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).primaryColorLight,
               size: 20,
             ),
           ],
@@ -46,6 +48,7 @@ class LeaderboardItem extends StatelessWidget {
               Text(
                 item.name,
                 style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                      color: Theme.of(context).primaryColorDark,
                       fontWeight: FontWeight.w600,
                     ),
               ),
@@ -53,7 +56,7 @@ class LeaderboardItem extends StatelessWidget {
               Text(
                 item.totalSteps.toString(),
                 style: Theme.of(context).textTheme.headline6!.copyWith(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).primaryColorLight,
                       fontWeight: FontWeight.w600,
                     ),
               ),

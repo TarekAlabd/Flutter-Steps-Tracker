@@ -18,13 +18,23 @@ class ExchangesItem extends StatelessWidget {
     final date =
         DateFormat.yMMMMd().format(DateTime.parse(exchangeHistoryItem.date));
     return ListTile(
-      title: Text(
-        exchangeHistoryItem.title == ExchangeHistoryTitle.exchange.title
-            ? exchangeHistoryItem.title
-            : '${exchangeHistoryItem.points} points ${exchangeHistoryItem.title}',
+      title: Padding(
+        padding: const EdgeInsets.only(bottom: 6.0),
+        child: Text(
+          exchangeHistoryItem.title == ExchangeHistoryTitle.exchange.title
+              ? exchangeHistoryItem.title
+              : '${exchangeHistoryItem.points} points ${exchangeHistoryItem.title}',
+          style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                fontWeight: FontWeight.w600,
+                color: Theme.of(context).listTileTheme.textColor,
+              ),
+        ),
       ),
       subtitle: Text(
         date,
+        style: Theme.of(context).textTheme.subtitle2!.copyWith(
+              color: Colors.grey,
+            ),
       ),
       leading: CachedNetworkImage(
         imageUrl:

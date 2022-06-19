@@ -7,6 +7,11 @@ class MainTheme {
       primaryColor: AppColors.kPrimaryColor,
       scaffoldBackgroundColor: AppColors.kScaffoldBackgroundColor,
       backgroundColor: AppColors.kRedAccentColor,
+      primaryColorDark: AppColors.kGreyColor,
+      primaryColorLight: AppColors.kPrimaryColor,
+      dividerTheme: DividerThemeData(
+        color: AppColors.kGreyColor.withOpacity(0.4),
+      ),
       iconTheme: const IconThemeData(
         color: AppColors.kScaffoldBackgroundColor,
       ),
@@ -64,12 +69,21 @@ class MainTheme {
 
   static ThemeData darkTheme(BuildContext context) {
     return ThemeData(
-      primaryColor: AppColors.kPrimaryColor,
+      primaryColor: AppColors.kScaffoldBackgroundColor,
       scaffoldBackgroundColor: AppColors.kBlackColor,
       backgroundColor: AppColors.kRedAccentColor,
-      iconTheme: const IconThemeData(
-        color: AppColors.kScaffoldBackgroundColor,
+      primaryColorLight: AppColors.kPrimaryColor,
+      primaryColorDark: AppColors.kScaffoldBackgroundColor,
+      dividerTheme: DividerThemeData(
+        color: AppColors.kScaffoldBackgroundColor.withOpacity(0.4),
       ),
+      iconTheme: const IconThemeData(
+        color: AppColors.kBlackColor,
+      ),
+      listTileTheme: const ListTileThemeData(
+        textColor: AppColors.kScaffoldBackgroundColor,
+      ),
+      cardColor: Colors.grey,
       appBarTheme: const AppBarTheme(
         elevation: 0,
         backgroundColor: AppColors.kScaffoldBackgroundColor,

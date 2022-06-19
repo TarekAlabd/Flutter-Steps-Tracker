@@ -53,6 +53,7 @@ class _HealthPointsAndCaloriesState extends State<HealthPointsAndCalories> {
             mainTitle: 'Health Points',
             number: isLoading ? '-' : healthPoints.toString(),
             iconData: Icons.shopping_bag,
+            color: Theme.of(context).primaryColor,
             unit: 'Pts',
           ),
         ),

@@ -24,9 +24,9 @@ class LeaderboardPage extends StatelessWidget {
             bloc: BlocProvider.of<LeaderboardCubit>(context),
             builder: (context, state) {
               return state.maybeWhen(
-                loading: () => _buildLeaderboardPage(isLoading: true),
-                loaded: (users) => _buildLeaderboardPage(users: users),
-                orElse: () => _buildLeaderboardPage(),
+                loading: () => _buildLeaderboardPage(context, isLoading: true),
+                loaded: (users) => _buildLeaderboardPage(context, users: users),
+                orElse: () => _buildLeaderboardPage(context),
               );
             },
           ),
@@ -35,7 +35,7 @@ class LeaderboardPage extends StatelessWidget {
     );
   }
 
-  Widget _buildLeaderboardPage(
+  Widget _buildLeaderboardPage(BuildContext context,
       {bool isLoading = false, List<UserModel>? users}) {
     if (isLoading) {
       return const Center(
@@ -88,12 +88,19 @@ class LeaderboardPage extends StatelessWidget {
             ),
             const SizedBox(height: 24.0),
             const Divider(),
-            const SizedBox(height: 16.0),
             Column(
               children: List.generate(leftUsers.length, (index) {
-                return LeaderboardItem(
-                  sNumber: index + 4,
-                  item: leftUsers[index],
+                return Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12.0),
+                      child: LeaderboardItem(
+                        sNumber: index + 4,
+                        item: leftUsers[index],
+                      ),
+                    ),
+                    const Divider(),
+                  ],
                 );
               }),
             ),

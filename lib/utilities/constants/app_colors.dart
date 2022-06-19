@@ -6,4 +6,5 @@ class AppColors {
   static const kPrimaryColor = Colors.blue;
   static const kErrorColor = Colors.red;
   static const kRedAccentColor = Colors.redAccent;
+  static const kGreyColor = Colors.grey;
 }

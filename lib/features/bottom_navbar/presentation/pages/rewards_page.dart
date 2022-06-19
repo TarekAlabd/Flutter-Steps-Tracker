@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/di/injection_container.dart';
@@ -29,8 +28,8 @@ class RewardsPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                CachedNetworkImage(
-                  imageUrl: AppAssets.rewardsBanner,
+                Image.asset(
+                  AppAssets.rewardsBanner,
                   fit: BoxFit.cover,
                   height: 200,
                 ),
@@ -70,7 +69,10 @@ class RewardsPage extends StatelessWidget {
         ? Column(
             children: rewards
                 .map(
-                  (e) => RewardsItem(reward: e),
+                  (e) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                    child: RewardsItem(reward: e),
+                  ),
                 )
                 .toList(),
           )

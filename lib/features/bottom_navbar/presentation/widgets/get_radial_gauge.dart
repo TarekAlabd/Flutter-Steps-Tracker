@@ -72,6 +72,13 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
       ),
       axes: <RadialAxis>[
         RadialAxis(
+          axisLineStyle: AxisLineStyle(
+            color: Theme.of(context).primaryColorDark,
+            dashArray: const <double>[8, 2],
+          ),
+          axisLabelStyle: GaugeTextStyle(
+            color: Theme.of(context).primaryColorDark,
+          ),
           annotations: [
             GaugeAnnotation(
               widget: !isLoading
@@ -88,7 +95,7 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
                           text: 'Step Goal:\n',
                           style:
                               Theme.of(context).textTheme.subtitle1!.copyWith(
-                                    color: Theme.of(context).errorColor,
+                                    color: Theme.of(context).backgroundColor,
                                     fontWeight: FontWeight.w400,
                                   ),
                         ),
@@ -96,7 +103,7 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
                           text: '8000\n',
                           style:
                               Theme.of(context).textTheme.subtitle1!.copyWith(
-                                    color: Theme.of(context).errorColor,
+                                    color: Theme.of(context).backgroundColor,
                                     fontWeight: FontWeight.w400,
                                   ),
                         ),
