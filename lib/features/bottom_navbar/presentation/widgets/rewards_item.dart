@@ -91,13 +91,10 @@ class _RewardsItemState extends State<RewardsItem> {
                               context,
                               isLoading: true,
                             ),
-                            userDataLoaded: (points) {
-                              debugPrint('From the builder: $points');
-                              return _buildEarnButton(
-                                context,
-                                points: points,
-                              );
-                            },
+                            userDataLoaded: (points) => _buildEarnButton(
+                              context,
+                              points: points,
+                            ),
                             orElse: () => _buildEarnButton(context),
                           );
                         },
@@ -124,7 +121,6 @@ class _RewardsItemState extends State<RewardsItem> {
       child: ElevatedButton(
         onPressed: !isLoading
             ? () {
-                debugPrint('Points here: $points');
                 if (widget.reward.points <= points) {
                   showAlertDialog(
                     context,

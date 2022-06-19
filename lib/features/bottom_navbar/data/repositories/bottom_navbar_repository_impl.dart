@@ -59,7 +59,7 @@ class BottomNavbarRepositoryImpl implements BottomNavbarRepository {
   Future<Either<Failure, bool>> setStepsAndPoints(int steps) async {
     try {
       final user = await _authLocalDataSource.currentUser();
-      var totalSteps = 0, totalHealthPoints = 0;
+      var totalHealthPoints = 0;
       int healthPoints = (steps ~/ 100) * 5;
       await _database.setDailySteps(
         StepsAndPointsModel(
@@ -69,18 +69,16 @@ class BottomNavbarRepositoryImpl implements BottomNavbarRepository {
         ),
         user!.uid,
       );
-      var dailyPointsList = await _database
-          .dailyPointsStream(user.uid, documentIdForDailyUse())
-          .first;
-      totalSteps += steps;
-      for (var e in dailyPointsList) {
-        totalSteps += e.steps;
+      var myRewardsList = await _database.myRewardsStream(user.uid).first;
+      int deletedPoints = 0;
+      for (var reward in myRewardsList) {
+        deletedPoints += reward.points;
       }
-      totalHealthPoints = (totalSteps ~/ 100) * 5;
+      totalHealthPoints = healthPoints - deletedPoints;
       final newUser = UserModel(
         uid: user.uid,
         name: user.name,
-        totalSteps: totalSteps,
+        totalSteps: steps,
         healthPoints: totalHealthPoints,
       );
       await _database.setUserData(newUser);
