@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           create: (BuildContext context) {
             final cubit = getIt<UtilityCubit>();
             cubit.getCurrentTheme();
-            // cubit.getCurrentLocale();
+            cubit.getCurrentLocale();
             return cubit;
           },
         ),
