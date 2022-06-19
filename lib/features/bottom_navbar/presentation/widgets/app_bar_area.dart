@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
+import 'package:flutter_steps_tracker/utilities/locale/cubit/utility_cubit.dart';
+import 'package:provider/provider.dart';
 
 class AppBarArea extends StatelessWidget {
   const AppBarArea({Key? key}) : super(key: key);
@@ -27,10 +29,15 @@ class AppBarArea extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                   ),
             ),
-            Icon(
-              Icons.sunny,
+            IconButton(
+              icon: const Icon(
+                Icons.sunny,
+                size: 25,
+              ),
+              onPressed: () async =>
+                  await Provider.of<UtilityCubit>(context, listen: false)
+                      .switchTheme(),
               color: Theme.of(context).primaryColor,
-              size: 25,
             ),
           ],
         ),

@@ -20,8 +20,8 @@ mixin _$UtilityState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() reloadingTheme,
-    required TResult Function() loaded,
+    required TResult Function(bool isDark) reloadingTheme,
+    required TResult Function(Locale locale) reloadingLocale,
     required TResult Function() changeState,
     required TResult Function(String message) error,
   }) =>
@@ -30,8 +30,8 @@ mixin _$UtilityState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
   }) =>
@@ -40,8 +40,8 @@ mixin _$UtilityState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
     required TResult orElse(),
@@ -52,7 +52,7 @@ mixin _$UtilityState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(ReloadingTheme value) reloadingTheme,
-    required TResult Function(Loaded value) loaded,
+    required TResult Function(ReloadingLocale value) reloadingLocale,
     required TResult Function(ChangeState value) changeState,
     required TResult Function(Error value) error,
   }) =>
@@ -62,7 +62,7 @@ mixin _$UtilityState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
   }) =>
@@ -72,7 +72,7 @@ mixin _$UtilityState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -136,8 +136,8 @@ class _$Initial implements Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() reloadingTheme,
-    required TResult Function() loaded,
+    required TResult Function(bool isDark) reloadingTheme,
+    required TResult Function(Locale locale) reloadingLocale,
     required TResult Function() changeState,
     required TResult Function(String message) error,
   }) {
@@ -149,8 +149,8 @@ class _$Initial implements Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
   }) {
@@ -162,8 +162,8 @@ class _$Initial implements Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
     required TResult orElse(),
@@ -180,7 +180,7 @@ class _$Initial implements Initial {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(ReloadingTheme value) reloadingTheme,
-    required TResult Function(Loaded value) loaded,
+    required TResult Function(ReloadingLocale value) reloadingLocale,
     required TResult Function(ChangeState value) changeState,
     required TResult Function(Error value) error,
   }) {
@@ -193,7 +193,7 @@ class _$Initial implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
   }) {
@@ -206,7 +206,7 @@ class _$Initial implements Initial {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -262,8 +262,8 @@ class _$Loading implements Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() reloadingTheme,
-    required TResult Function() loaded,
+    required TResult Function(bool isDark) reloadingTheme,
+    required TResult Function(Locale locale) reloadingLocale,
     required TResult Function() changeState,
     required TResult Function(String message) error,
   }) {
@@ -275,8 +275,8 @@ class _$Loading implements Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
   }) {
@@ -288,8 +288,8 @@ class _$Loading implements Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
     required TResult orElse(),
@@ -306,7 +306,7 @@ class _$Loading implements Loading {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(ReloadingTheme value) reloadingTheme,
-    required TResult Function(Loaded value) loaded,
+    required TResult Function(ReloadingLocale value) reloadingLocale,
     required TResult Function(ChangeState value) changeState,
     required TResult Function(Error value) error,
   }) {
@@ -319,7 +319,7 @@ class _$Loading implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
   }) {
@@ -332,7 +332,7 @@ class _$Loading implements Loading {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -353,6 +353,7 @@ abstract class _$$ReloadingThemeCopyWith<$Res> {
   factory _$$ReloadingThemeCopyWith(
           _$ReloadingTheme value, $Res Function(_$ReloadingTheme) then) =
       __$$ReloadingThemeCopyWithImpl<$Res>;
+  $Res call({bool isDark});
 }
 
 /// @nodoc
@@ -365,38 +366,61 @@ class __$$ReloadingThemeCopyWithImpl<$Res>
 
   @override
   _$ReloadingTheme get _value => super._value as _$ReloadingTheme;
+
+  @override
+  $Res call({
+    Object? isDark = freezed,
+  }) {
+    return _then(_$ReloadingTheme(
+      isDark == freezed
+          ? _value.isDark
+          : isDark // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ReloadingTheme implements ReloadingTheme {
-  const _$ReloadingTheme();
+  const _$ReloadingTheme(this.isDark);
+
+  @override
+  final bool isDark;
 
   @override
   String toString() {
-    return 'UtilityState.reloadingTheme()';
+    return 'UtilityState.reloadingTheme(isDark: $isDark)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ReloadingTheme);
+        (other.runtimeType == runtimeType &&
+            other is _$ReloadingTheme &&
+            const DeepCollectionEquality().equals(other.isDark, isDark));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isDark));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$ReloadingThemeCopyWith<_$ReloadingTheme> get copyWith =>
+      __$$ReloadingThemeCopyWithImpl<_$ReloadingTheme>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() reloadingTheme,
-    required TResult Function() loaded,
+    required TResult Function(bool isDark) reloadingTheme,
+    required TResult Function(Locale locale) reloadingLocale,
     required TResult Function() changeState,
     required TResult Function(String message) error,
   }) {
-    return reloadingTheme();
+    return reloadingTheme(isDark);
   }
 
   @override
@@ -404,12 +428,12 @@ class _$ReloadingTheme implements ReloadingTheme {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
   }) {
-    return reloadingTheme?.call();
+    return reloadingTheme?.call(isDark);
   }
 
   @override
@@ -417,14 +441,14 @@ class _$ReloadingTheme implements ReloadingTheme {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (reloadingTheme != null) {
-      return reloadingTheme();
+      return reloadingTheme(isDark);
     }
     return orElse();
   }
@@ -435,7 +459,7 @@ class _$ReloadingTheme implements ReloadingTheme {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(ReloadingTheme value) reloadingTheme,
-    required TResult Function(Loaded value) loaded,
+    required TResult Function(ReloadingLocale value) reloadingLocale,
     required TResult Function(ChangeState value) changeState,
     required TResult Function(Error value) error,
   }) {
@@ -448,7 +472,7 @@ class _$ReloadingTheme implements ReloadingTheme {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
   }) {
@@ -461,7 +485,7 @@ class _$ReloadingTheme implements ReloadingTheme {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -474,55 +498,87 @@ class _$ReloadingTheme implements ReloadingTheme {
 }
 
 abstract class ReloadingTheme implements UtilityState {
-  const factory ReloadingTheme() = _$ReloadingTheme;
+  const factory ReloadingTheme(final bool isDark) = _$ReloadingTheme;
+
+  bool get isDark => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$ReloadingThemeCopyWith<_$ReloadingTheme> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoadedCopyWith<$Res> {
-  factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
-      __$$LoadedCopyWithImpl<$Res>;
+abstract class _$$ReloadingLocaleCopyWith<$Res> {
+  factory _$$ReloadingLocaleCopyWith(
+          _$ReloadingLocale value, $Res Function(_$ReloadingLocale) then) =
+      __$$ReloadingLocaleCopyWithImpl<$Res>;
+  $Res call({Locale locale});
 }
 
 /// @nodoc
-class __$$LoadedCopyWithImpl<$Res> extends _$UtilityStateCopyWithImpl<$Res>
-    implements _$$LoadedCopyWith<$Res> {
-  __$$LoadedCopyWithImpl(_$Loaded _value, $Res Function(_$Loaded) _then)
-      : super(_value, (v) => _then(v as _$Loaded));
+class __$$ReloadingLocaleCopyWithImpl<$Res>
+    extends _$UtilityStateCopyWithImpl<$Res>
+    implements _$$ReloadingLocaleCopyWith<$Res> {
+  __$$ReloadingLocaleCopyWithImpl(
+      _$ReloadingLocale _value, $Res Function(_$ReloadingLocale) _then)
+      : super(_value, (v) => _then(v as _$ReloadingLocale));
 
   @override
-  _$Loaded get _value => super._value as _$Loaded;
+  _$ReloadingLocale get _value => super._value as _$ReloadingLocale;
+
+  @override
+  $Res call({
+    Object? locale = freezed,
+  }) {
+    return _then(_$ReloadingLocale(
+      locale == freezed
+          ? _value.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$Loaded implements Loaded {
-  const _$Loaded();
+class _$ReloadingLocale implements ReloadingLocale {
+  const _$ReloadingLocale(this.locale);
+
+  @override
+  final Locale locale;
 
   @override
   String toString() {
-    return 'UtilityState.loaded()';
+    return 'UtilityState.reloadingLocale(locale: $locale)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Loaded);
+        (other.runtimeType == runtimeType &&
+            other is _$ReloadingLocale &&
+            const DeepCollectionEquality().equals(other.locale, locale));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(locale));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$ReloadingLocaleCopyWith<_$ReloadingLocale> get copyWith =>
+      __$$ReloadingLocaleCopyWithImpl<_$ReloadingLocale>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() reloadingTheme,
-    required TResult Function() loaded,
+    required TResult Function(bool isDark) reloadingTheme,
+    required TResult Function(Locale locale) reloadingLocale,
     required TResult Function() changeState,
     required TResult Function(String message) error,
   }) {
-    return loaded();
+    return reloadingLocale(locale);
   }
 
   @override
@@ -530,12 +586,12 @@ class _$Loaded implements Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
   }) {
-    return loaded?.call();
+    return reloadingLocale?.call(locale);
   }
 
   @override
@@ -543,14 +599,14 @@ class _$Loaded implements Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
-    if (loaded != null) {
-      return loaded();
+    if (reloadingLocale != null) {
+      return reloadingLocale(locale);
     }
     return orElse();
   }
@@ -561,11 +617,11 @@ class _$Loaded implements Loaded {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(ReloadingTheme value) reloadingTheme,
-    required TResult Function(Loaded value) loaded,
+    required TResult Function(ReloadingLocale value) reloadingLocale,
     required TResult Function(ChangeState value) changeState,
     required TResult Function(Error value) error,
   }) {
-    return loaded(this);
+    return reloadingLocale(this);
   }
 
   @override
@@ -574,11 +630,11 @@ class _$Loaded implements Loaded {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
   }) {
-    return loaded?.call(this);
+    return reloadingLocale?.call(this);
   }
 
   @override
@@ -587,20 +643,25 @@ class _$Loaded implements Loaded {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
     required TResult orElse(),
   }) {
-    if (loaded != null) {
-      return loaded(this);
+    if (reloadingLocale != null) {
+      return reloadingLocale(this);
     }
     return orElse();
   }
 }
 
-abstract class Loaded implements UtilityState {
-  const factory Loaded() = _$Loaded;
+abstract class ReloadingLocale implements UtilityState {
+  const factory ReloadingLocale(final Locale locale) = _$ReloadingLocale;
+
+  Locale get locale => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$ReloadingLocaleCopyWith<_$ReloadingLocale> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -645,8 +706,8 @@ class _$ChangeState implements ChangeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() reloadingTheme,
-    required TResult Function() loaded,
+    required TResult Function(bool isDark) reloadingTheme,
+    required TResult Function(Locale locale) reloadingLocale,
     required TResult Function() changeState,
     required TResult Function(String message) error,
   }) {
@@ -658,8 +719,8 @@ class _$ChangeState implements ChangeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
   }) {
@@ -671,8 +732,8 @@ class _$ChangeState implements ChangeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
     required TResult orElse(),
@@ -689,7 +750,7 @@ class _$ChangeState implements ChangeState {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(ReloadingTheme value) reloadingTheme,
-    required TResult Function(Loaded value) loaded,
+    required TResult Function(ReloadingLocale value) reloadingLocale,
     required TResult Function(ChangeState value) changeState,
     required TResult Function(Error value) error,
   }) {
@@ -702,7 +763,7 @@ class _$ChangeState implements ChangeState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
   }) {
@@ -715,7 +776,7 @@ class _$ChangeState implements ChangeState {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
     required TResult orElse(),
@@ -795,8 +856,8 @@ class _$Error implements Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() reloadingTheme,
-    required TResult Function() loaded,
+    required TResult Function(bool isDark) reloadingTheme,
+    required TResult Function(Locale locale) reloadingLocale,
     required TResult Function() changeState,
     required TResult Function(String message) error,
   }) {
@@ -808,8 +869,8 @@ class _$Error implements Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
   }) {
@@ -821,8 +882,8 @@ class _$Error implements Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? reloadingTheme,
-    TResult Function()? loaded,
+    TResult Function(bool isDark)? reloadingTheme,
+    TResult Function(Locale locale)? reloadingLocale,
     TResult Function()? changeState,
     TResult Function(String message)? error,
     required TResult orElse(),
@@ -839,7 +900,7 @@ class _$Error implements Error {
     required TResult Function(Initial value) initial,
     required TResult Function(Loading value) loading,
     required TResult Function(ReloadingTheme value) reloadingTheme,
-    required TResult Function(Loaded value) loaded,
+    required TResult Function(ReloadingLocale value) reloadingLocale,
     required TResult Function(ChangeState value) changeState,
     required TResult Function(Error value) error,
   }) {
@@ -852,7 +913,7 @@ class _$Error implements Error {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
   }) {
@@ -865,7 +926,7 @@ class _$Error implements Error {
     TResult Function(Initial value)? initial,
     TResult Function(Loading value)? loading,
     TResult Function(ReloadingTheme value)? reloadingTheme,
-    TResult Function(Loaded value)? loaded,
+    TResult Function(ReloadingLocale value)? reloadingLocale,
     TResult Function(ChangeState value)? changeState,
     TResult Function(Error value)? error,
     required TResult orElse(),

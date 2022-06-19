@@ -35,16 +35,13 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<UtilityCubit>(
           lazy: false,
-          create: (BuildContext context) => UtilityCubit(),
+          create: (BuildContext context) {
+            final cubit = getIt<UtilityCubit>();
+            cubit.getCurrentTheme();
+            // cubit.getCurrentLocale();
+            return cubit;
+          },
         ),
-        // BlocProvider<LocaleCubit>(
-        //   lazy: false,
-        //   create: (context) {
-        //     final cubit = LocaleCubit();
-        //     cubit.getCurrentLocale();
-        //     return cubit;
-        //   },
-        // ),
         BlocProvider<AuthStatusCubit>(
           lazy: false,
           create: (context) {
@@ -60,8 +57,6 @@ class MyApp extends StatelessWidget {
         },
         child: Builder(builder: (context) {
           final utility = BlocProvider.of<UtilityCubit>(context);
-          utility.getCurrentLocale();
-          utility.getCurrentTheme();
           return BlocBuilder<UtilityCubit, UtilityState>(
             bloc: utility,
             builder: (context, state) {

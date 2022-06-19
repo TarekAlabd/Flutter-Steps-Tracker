@@ -17,8 +17,10 @@ class UtilityCubit extends Cubit<UtilityState> {
 
   Future<void> getCurrentTheme() async {
     await getIt<CacheHelper>().has(KeyConstants.theme).then((hasToken) async {
+      debugPrint('Has Token: $hasToken');
       if (hasToken) {
         await getIt<CacheHelper>().get(KeyConstants.theme).then((value) async {
+          debugPrint('Value isDark: $value');
           isDark = value as bool;
         });
       } else {
@@ -31,7 +33,7 @@ class UtilityCubit extends Cubit<UtilityState> {
   Future<void> switchTheme() async {
     isDark = !isDark;
     await getIt<CacheHelper>().put(KeyConstants.theme, isDark);
-    emit(const UtilityState.changeState());
+    emit(UtilityState.reloadingTheme(isDark));
   }
 
   Future<void> getCurrentLocale() async {
@@ -47,7 +49,7 @@ class UtilityCubit extends Cubit<UtilityState> {
               countryCode: value.split('_').last);
         });
       } else {
-        locale = KeyConstants.arabicLocale;
+        locale = KeyConstants.englishLocale;
       }
     });
     emit(const UtilityState.changeState());
@@ -57,6 +59,6 @@ class UtilityCubit extends Cubit<UtilityState> {
     locale = lc;
     await getIt<CacheHelper>().put(KeyConstants.localeKey, locale.toString());
     debugPrint('changedLocale');
-    emit(const UtilityState.changeState());
+    emit(UtilityState.reloadingLocale(locale));
   }
 }
