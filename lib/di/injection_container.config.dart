@@ -6,7 +6,7 @@
 
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:shared_preferences/shared_preferences.dart' as _i7;
+import 'package:shared_preferences/shared_preferences.dart' as _i6;
 
 import '../core/data/data_sources/cache_helper.dart' as _i14;
 import '../core/data/data_sources/database.dart' as _i5;
@@ -49,7 +49,7 @@ import '../features/intro/presentation/manager/auth_actions/auth_cubit.dart'
     as _i25;
 import '../features/intro/presentation/manager/auth_status/auth_status_cubit.dart'
     as _i26;
-import '../utilities/locale/cubit/locale_cubit.dart' as _i6;
+import '../utilities/locale/cubit/utility_cubit.dart' as _i7;
 import 'app_module.dart' as _i29; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
@@ -62,11 +62,11 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.singleton<_i4.AuthRemoteDataSource>(
       _i4.AuthRemoteDataSourceImpl(authBase: get<_i3.AuthBase>()));
   gh.singleton<_i5.Database>(_i5.FireStoreDatabase());
-  gh.singleton<_i6.LocaleCubit>(_i6.LocaleCubit());
-  await gh.factoryAsync<_i7.SharedPreferences>(() => appModule.prefs,
+  await gh.factoryAsync<_i6.SharedPreferences>(() => appModule.prefs,
       preResolve: true);
+  gh.factory<_i7.UtilityCubit>(() => _i7.UtilityCubit());
   gh.singleton<_i8.AuthLocalDataSource>(
-      _i8.AuthLocalDataSourceImpl(get<_i7.SharedPreferences>()));
+      _i8.AuthLocalDataSourceImpl(get<_i6.SharedPreferences>()));
   gh.singleton<_i9.AuthRepository>(_i10.AuthRepositoryImpl(
       get<_i4.AuthRemoteDataSource>(),
       get<_i8.AuthLocalDataSource>(),
@@ -76,7 +76,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.singleton<_i12.BottomNavbarRepository>(_i13.BottomNavbarRepositoryImpl(
       get<_i5.Database>(), get<_i8.AuthLocalDataSource>()));
   gh.singleton<_i14.CacheHelper>(
-      _i14.CacheHelperImpl(get<_i7.SharedPreferences>()));
+      _i14.CacheHelperImpl(get<_i6.SharedPreferences>()));
   gh.factory<_i15.EarnARewardUseCase>(
       () => _i15.EarnARewardUseCase(get<_i12.BottomNavbarRepository>()));
   gh.factory<_i16.GetHistoryExchangesUseCase>(() =>

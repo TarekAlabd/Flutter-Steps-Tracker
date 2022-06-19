@@ -1,15 +1,16 @@
+import 'dart:convert';
+
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class CacheHelper {
-  Future<String?> get({required String key});
-  Future<bool?> checkIfAppLocaleSetKey({required String isAppLocaleSetKey});
-  Future<bool> put({
-    required String key,
-    required String value,
-  });
-  Future clear({required String key});
-  Future<bool?> has({required String key});
+  Future get(String key);
+
+  Future<bool> has(String key);
+
+  Future<bool> put(String key, dynamic value);
+
+  Future<bool> clear(String key);
 }
 
 @Singleton(as: CacheHelper)
@@ -19,19 +20,28 @@ class CacheHelperImpl extends CacheHelper {
   CacheHelperImpl(this._sharedPreferences);
 
   @override
-  Future clear({required String key}) async {
+  Future<bool> has(String key) async {
     final bool f = await _basicErrorHandling(() async {
-      return _sharedPreferences.remove(key);
+      return _sharedPreferences.containsKey(key) &&
+          _sharedPreferences.getString(key) != null &&
+          _sharedPreferences.getString(key)!.isNotEmpty;
     });
     return f;
   }
 
   @override
-  Future<String?> get({required String key}) async {
+  Future<bool> clear(String key) async {
+    final bool f = await _basicErrorHandling(() async {
+      return await _sharedPreferences.remove(key);
+    });
+    return f;
+  }
+
+  @override
+  Future get(String key) async {
     final f = await _basicErrorHandling(() async {
-      final hasKey = await has(key: key);
-      if (hasKey != null && hasKey) {
-        return _sharedPreferences.getString(key)!;
+      if (await has(key)) {
+        return await jsonDecode(_sharedPreferences.getString(key)!);
       }
       return null;
     });
@@ -39,28 +49,12 @@ class CacheHelperImpl extends CacheHelper {
   }
 
   @override
-  Future<bool?> checkIfAppLocaleSetKey(
-      {required String isAppLocaleSetKey}) async {
-    final isAppLocaleSet = await _basicErrorHandling(() async {
-      final hasKey = await has(key: isAppLocaleSetKey);
-      if (hasKey != null && hasKey) {
-        return _sharedPreferences.getString(isAppLocaleSetKey)!;
-      }
-      return null;
+  Future<bool> put(String key, dynamic value) async {
+    final bool f = await _basicErrorHandling(() async {
+      // ignore: unnecessary_await_in_return
+      return await _sharedPreferences.setString(key, jsonEncode(value));
     });
-    return isAppLocaleSet == "true" ? true : false;
-  }
-
-  @override
-  Future<bool> put({required String key, required String value}) async {
-    final isSucceed = await _sharedPreferences.setString(key, value);
-    return isSucceed;
-  }
-
-  @override
-  Future<bool?> has({required String key}) async {
-    final contains = _sharedPreferences.containsKey(key);
-    return contains;
+    return f;
   }
 }
 

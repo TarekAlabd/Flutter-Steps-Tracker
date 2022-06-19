@@ -1,9 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_steps_tracker/di/injection_container.dart';
 import 'package:flutter_steps_tracker/features/intro/presentation/manager/auth_status/auth_status_cubit.dart';
-import 'package:flutter_steps_tracker/utilities/locale/cubit/locale_cubit.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
+import 'package:flutter_steps_tracker/utilities/locale/cubit/utility_cubit.dart';
+import 'package:flutter_steps_tracker/utilities/locale/cubit/utility_state.dart';
 import 'package:flutter_steps_tracker/utilities/locale/theme_data.dart';
 import 'package:flutter_steps_tracker/utilities/routes/router.dart';
 import 'package:flutter_steps_tracker/utilities/routes/routes.dart';
@@ -30,14 +33,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<LocaleCubit>(
+        BlocProvider<UtilityCubit>(
           lazy: false,
-          create: (context) {
-            final cubit = LocaleCubit();
-            cubit.getCurrentLocale();
-            return cubit;
-          },
+          create: (BuildContext context) => UtilityCubit(),
         ),
+        // BlocProvider<LocaleCubit>(
+        //   lazy: false,
+        //   create: (context) {
+        //     final cubit = LocaleCubit();
+        //     cubit.getCurrentLocale();
+        //     return cubit;
+        //   },
+        // ),
         BlocProvider<AuthStatusCubit>(
           lazy: false,
           create: (context) {
@@ -52,12 +59,30 @@ class MyApp extends StatelessWidget {
           WidgetsBinding.instance.focusManager.primaryFocus?.unfocus();
         },
         child: Builder(builder: (context) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'Flutter Steps Tracker',
-            theme: themeData(context),
-            onGenerateRoute: onGenerate,
-            initialRoute: AppRoutes.landingPageRoute,
+          final utility = BlocProvider.of<UtilityCubit>(context);
+          utility.getCurrentLocale();
+          utility.getCurrentTheme();
+          return BlocBuilder<UtilityCubit, UtilityState>(
+            bloc: utility,
+            builder: (context, state) {
+              return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                title: 'Flutter Steps Tracker',
+                theme: MainTheme.lightTheme(context),
+                supportedLocales: S.delegate.supportedLocales,
+                localizationsDelegates: const [
+                  S.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                locale: utility.locale,
+                themeMode: utility.currentTheme(),
+                darkTheme: MainTheme.darkTheme(context),
+                onGenerateRoute: onGenerate,
+                initialRoute: AppRoutes.landingPageRoute,
+              );
+            },
           );
         }),
       ),
