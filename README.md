@@ -8,8 +8,6 @@ So you may find some workarounds that will be more accurate and better after add
 
 ## Quick Start 🚀
 
-<img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/1.png" width=300> 
-
 ## Feature Set ✨
 
 * [x] Free & Open Source
@@ -43,5 +41,12 @@ So you may find some workarounds that will be more accurate and better after add
 * [ ] Publish the app to Google Play Store
 
 ## Screenshots :camera:
+
+<img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/1.png" width=300> 
+
+| Column 1  | Column 2  | Column 3  | Column 4  |
+|:----------|:----------|:----------|:----------|
+| <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/2.png" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/3.png" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/4.png" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/5.png" width=300>     |
+| <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/2-1.png" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/3-1.png" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/4-1.png" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/5-1.png" width=300>     |
 
 ## Documentation 📝
