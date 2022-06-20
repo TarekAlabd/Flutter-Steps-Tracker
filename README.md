@@ -31,6 +31,8 @@ So you may find some workarounds that will be more accurate and better after add
 ## Future Steps ✨
 
 * [ ] Refactor some of the colors, methods, cubits, repos and some files in the architecture
+* [ ] Daily steps (The Pedometer plugin basically calculates the total steps not daily)
+* [ ] Customized Goals
 * [ ] Build a good UI for the empty states (one empty state)
 * [ ] Integrate with the cloud functions and make the app more accurate
 * [ ] Update the visual feedback after the user gains extra points

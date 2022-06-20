@@ -7,12 +7,12 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class GetUserDataUseCase
-    extends UseCase<Future<Either<Failure, UserModel>>, NoParams> {
+    extends UseCase<Future<Either<Failure, Stream<UserModel>>>, NoParams> {
   final BottomNavbarRepository _bottomNavbarRepository;
 
   GetUserDataUseCase(this._bottomNavbarRepository);
 
   @override
-  Future<Either<Failure, UserModel>> call(NoParams params) async =>
-      await _bottomNavbarRepository.getUserData();
+  Future<Either<Failure, Stream<UserModel>>> call(NoParams params) async =>
+      await _bottomNavbarRepository.getRealTimeUserData();
 }

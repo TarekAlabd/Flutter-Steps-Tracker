@@ -19,5 +19,7 @@ abstract class BottomNavbarRepository {
 
   Future<Either<Failure, UserModel>> getUserData();
 
+  Future<Either<Failure, Stream<UserModel>>> getRealTimeUserData();
+
   Future<Either<Failure, bool>> earnAReward(RewardModel reward);
 }

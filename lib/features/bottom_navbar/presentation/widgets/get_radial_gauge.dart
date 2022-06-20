@@ -40,10 +40,6 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
       },
       builder: (context, state) {
         return state.maybeWhen(
-          loading: () => _buildRadialGauge(
-            context,
-            isLoading: true,
-          ),
           loaded: (steps) => _buildRadialGauge(
             context,
             steps: steps,
@@ -60,7 +56,6 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
 
   Widget _buildRadialGauge(
     BuildContext context, {
-    bool isLoading = false,
     String steps = '0',
   }) {
     return SfRadialGauge(
@@ -82,36 +77,31 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
           ),
           annotations: [
             GaugeAnnotation(
-              widget: !isLoading
-                  ? Text.rich(
-                      TextSpan(children: [
-                        TextSpan(
-                          text: '$steps\n',
-                          style:
-                              Theme.of(context).textTheme.headline2!.copyWith(
-                                    color: Theme.of(context).primaryColor,
-                                  ),
+              widget: Text.rich(
+                TextSpan(children: [
+                  TextSpan(
+                    text: '$steps\n',
+                    style: Theme.of(context).textTheme.headline2!.copyWith(
+                          color: Theme.of(context).primaryColor,
                         ),
-                        TextSpan(
-                          text: '${S.of(context).stepGoal}\n',
-                          style:
-                              Theme.of(context).textTheme.subtitle1!.copyWith(
-                                    color: Theme.of(context).backgroundColor,
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                  ),
+                  TextSpan(
+                    text: '${S.of(context).stepGoal}\n',
+                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                          color: Theme.of(context).backgroundColor,
+                          fontWeight: FontWeight.w400,
                         ),
-                        TextSpan(
-                          text: '8000\n',
-                          style:
-                              Theme.of(context).textTheme.subtitle1!.copyWith(
-                                    color: Theme.of(context).backgroundColor,
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                  ),
+                  TextSpan(
+                    text: '8000\n',
+                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                          color: Theme.of(context).backgroundColor,
+                          fontWeight: FontWeight.w400,
                         ),
-                      ]),
-                      textAlign: TextAlign.center,
-                    )
-                  : const CircularProgressIndicator(),
+                  ),
+                ]),
+                textAlign: TextAlign.center,
+              ),
             ),
           ],
           pointers: <GaugePointer>[

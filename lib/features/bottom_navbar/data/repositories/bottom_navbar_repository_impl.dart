@@ -106,6 +106,18 @@ class BottomNavbarRepositoryImpl implements BottomNavbarRepository {
   }
 
   @override
+  Future<Either<Failure, Stream<UserModel>>> getRealTimeUserData() async {
+    try {
+      final user = await _authLocalDataSource.currentUser();
+      return Right(_database.getUserStream(user!.uid));
+    } on ApplicationException catch (e) {
+      return Left(
+        firebaseExceptionsDecoder(e),
+      );
+    }
+  }
+
+  @override
   Future<Either<Failure, bool>> earnAReward(RewardModel reward) async {
     try {
       final user = await _authLocalDataSource.currentUser();

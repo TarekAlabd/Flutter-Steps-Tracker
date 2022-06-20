@@ -31,15 +31,19 @@ class HomeCubit extends Cubit<HomeState> {
   Future<void> getUserData() async {
     emit(const HomeState.stepsAndPointsLoading());
     final result = await _getUserDataUseCase(NoParams());
-    emit(
-      result.fold(
-        (failure) {
-          return HomeState.stepsError(message: S.current.somethingWentWrong);
+    result.fold(
+      (failure) =>
+          emit(HomeState.stepsError(message: S.current.somethingWentWrong)),
+      (userData) => userData.listen(
+        (event) {
+          debugPrint("User Steps here: ${event.totalSteps}");
+          emit(
+            HomeState.stepsAndPointsLoaded(
+              steps: event.totalSteps,
+              healthPoints: event.healthPoints,
+            ),
+          );
         },
-        (userData) => HomeState.stepsAndPointsLoaded(
-          steps: userData.totalSteps,
-          healthPoints: userData.healthPoints,
-        ),
       ),
     );
   }
@@ -54,6 +58,7 @@ class HomeCubit extends Cubit<HomeState> {
     debugPrint(event.toString());
     var oldSteps = int.tryParse(_steps) ?? 0;
     _steps = event.steps.toString();
+    debugPrint("Steps in Cubit: $_steps");
     emit(HomeState.loaded(steps: _steps));
     await _setStepsAndPointsUseCase(event.steps);
     await onFeedbackState(oldSteps, event.steps);

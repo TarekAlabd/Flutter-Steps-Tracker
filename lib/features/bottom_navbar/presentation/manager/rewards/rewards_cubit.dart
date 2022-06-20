@@ -27,16 +27,12 @@ class RewardsCubit extends Cubit<RewardsState> {
   Future<void> getUserPoints() async {
     emit(const RewardsState.loading());
     final result = await _getUserDataUseCase(NoParams());
-    emit(
-      result.fold(
-        (failure) {
-          return RewardsState.userDataError(
-              message: S.current.somethingWentWrong);
-        },
-        (user) => RewardsState.userDataLoaded(
-          points: user.healthPoints,
-        ),
-      ),
+    result.fold(
+      (failure) => emit(
+          RewardsState.userDataError(message: S.current.somethingWentWrong)),
+      (user) => user.listen((event) => RewardsState.userDataLoaded(
+            points: event.healthPoints,
+          )),
     );
   }
 

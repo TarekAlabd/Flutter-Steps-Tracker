@@ -66,7 +66,12 @@ class ExchangesHistoryPage extends StatelessWidget {
             ),
           )
         : Center(
-            child: Text(S.of(context).emptyState),
+            child: Text(
+              S.of(context).emptyState,
+              style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                    color: Theme.of(context).primaryColor,
+                  ),
+            ),
           );
   }
 }

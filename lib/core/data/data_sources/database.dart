@@ -25,6 +25,8 @@ abstract class Database {
     String uid,
   );
 
+  Stream<UserModel> getUserStream(String uid);
+
   Stream<List<RewardModel>> rewardsStream();
 
   Stream<List<UserModel>> usersStream();
@@ -120,6 +122,12 @@ class FireStoreDatabase implements Database {
   @override
   Stream<List<UserModel>> usersStream() => _service.collectionStream(
         path: APIPath.users(),
+        builder: (data, documentId) => UserModel.fromMap(data, documentId),
+      );
+
+  @override
+  Stream<UserModel> getUserStream(String uid) => _service.documentStream(
+        path: APIPath.user(uid),
         builder: (data, documentId) => UserModel.fromMap(data, documentId),
       );
 }

@@ -12,7 +12,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<HomeCubit>(
-      create: (context) => getIt<HomeCubit>(),
+      create: (context) {
+        final cubit = getIt<HomeCubit>();
+        cubit.getUserData();
+        return cubit;
+      },
       child: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
