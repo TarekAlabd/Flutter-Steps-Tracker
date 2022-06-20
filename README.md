@@ -44,7 +44,7 @@ So you may find some workarounds that will be more accurate and better after add
 
 <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/1.png" width=300> 
 
-| Column 1  | Column 2  | Column 3  | Column 4  |
+| Home  | Exchanges  | Rewards  | Leaderboard  |
 |:----------|:----------|:----------|:----------|
 | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/2.PNG" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/3.PNG" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/4.PNG" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/5.PNG" width=300>     |
 | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/2-1.PNG" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/3-1.PNG" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/4-1.PNG" width=300>     | <img src="https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/5-1.PNG" width=300>     |
