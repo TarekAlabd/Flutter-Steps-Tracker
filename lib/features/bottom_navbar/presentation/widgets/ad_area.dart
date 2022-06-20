@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
 
 class AdArea extends StatelessWidget {
@@ -26,7 +27,7 @@ class AdArea extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'More coming soon!',
+                      S.of(context).moreComingSoon,
                       style: Theme.of(context).textTheme.headline6!.copyWith(
                             color: Theme.of(context).scaffoldBackgroundColor,
                           ),

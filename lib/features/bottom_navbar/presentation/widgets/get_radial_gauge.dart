@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/di/injection_container.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home/home_cubit.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home/home_state.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class GetRadialGauge extends StatefulWidget {
@@ -29,8 +30,8 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
       listener: (context, state) {
         state.maybeWhen(
           feedbackGain: (steps) {
-            const snackBar = SnackBar(
-              content: Text('Congratulations! You gained more health points'),
+            final snackBar = SnackBar(
+              content: Text(S.of(context).gainMorePoints),
             );
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
           },
@@ -65,7 +66,7 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
     return SfRadialGauge(
       enableLoadingAnimation: true,
       title: GaugeTitle(
-        text: 'Total Steps Today',
+        text: S.of(context).totalStepsToday,
         textStyle: Theme.of(context).textTheme.headline5!.copyWith(
               color: Theme.of(context).primaryColor,
             ),
@@ -92,7 +93,7 @@ class _GetRadialGaugeState extends State<GetRadialGauge> {
                                   ),
                         ),
                         TextSpan(
-                          text: 'Step Goal:\n',
+                          text: '${S.of(context).stepGoal}\n',
                           style:
                               Theme.of(context).textTheme.subtitle1!.copyWith(
                                     color: Theme.of(context).backgroundColor,

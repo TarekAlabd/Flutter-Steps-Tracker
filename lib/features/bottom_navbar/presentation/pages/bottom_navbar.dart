@@ -5,6 +5,7 @@ import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/pages/
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/pages/leaderboard_page.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/pages/rewards_page.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/app_bar_area.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
 class BottomNavbar extends StatefulWidget {
@@ -30,25 +31,25 @@ class _BottomNavbarState extends State<BottomNavbar> {
     return [
       PersistentBottomNavBarItem(
         icon: const Icon(CupertinoIcons.home),
-        title: ("Home"),
+        title: (S.current.home),
         activeColorPrimary: Theme.of(context).primaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.track_changes),
-        title: ("History"),
+        title: (S.current.exchanges),
         activeColorPrimary: Theme.of(context).primaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.card_giftcard),
-        title: ("Rewards"),
+        title: (S.current.rewards),
         activeColorPrimary: Theme.of(context).primaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: const Icon(Icons.developer_board),
-        title: ("Board"),
+        title: (S.current.leaderboard),
         activeColorPrimary: Theme.of(context).primaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),

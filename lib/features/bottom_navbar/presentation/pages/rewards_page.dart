@@ -5,6 +5,7 @@ import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards/rewards_cubit.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards/rewards_state.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/rewards_item.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
 
 class RewardsPage extends StatelessWidget {
@@ -35,7 +36,7 @@ class RewardsPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 16.0),
                 Text(
-                  'Available Rewards',
+                  S.of(context).availableRewards,
                   style: Theme.of(context).textTheme.headline5!.copyWith(
                         color: Theme.of(context).primaryColor,
                       ),
@@ -76,8 +77,8 @@ class RewardsPage extends StatelessWidget {
                 )
                 .toList(),
           )
-        : const Center(
-            child: Text('No Data Available!'),
+        : Center(
+            child: Text(S.current.emptyState),
           );
   }
 }

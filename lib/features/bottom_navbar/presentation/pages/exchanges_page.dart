@@ -5,6 +5,7 @@ import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/exchang
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/exchanges_history/exchanges_history_cubit.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/exchanges_history/exchanges_history_state.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/exchanges_item.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 
 class ExchangesHistoryPage extends StatelessWidget {
   const ExchangesHistoryPage({Key? key}) : super(key: key);
@@ -64,8 +65,8 @@ class ExchangesHistoryPage extends StatelessWidget {
               ),
             ),
           )
-        : const Center(
-            child: Text('No Data Available!'),
+        : Center(
+            child: Text(S.of(context).emptyState),
           );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_steps_tracker/core/data/error/failures/firebase_auth_failure.dart';
 import 'package:flutter_steps_tracker/features/intro/domain/use_cases/sign_in_anonymously_use_case.dart';
 import 'package:flutter_steps_tracker/features/intro/presentation/manager/auth_actions/auth_state.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
@@ -21,11 +22,11 @@ class AuthCubit extends Cubit<AuthState> {
           if (failure is FirebaseAuthFailure) {
             failure.maybeWhen(
                 orElse: () =>
-                    const AuthState.error(message: 'Something went wrong!'),
+                    AuthState.error(message: S.current.somethingWentWrong),
                 operationNotAllowed: (message) =>
                     AuthState.error(message: message));
           }
-          return const AuthState.error(message: 'Something went wrong!');
+          return AuthState.error(message: S.current.somethingWentWrong);
         },
         (_) => const AuthState.loggedIn(),
       ),

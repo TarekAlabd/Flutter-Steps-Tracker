@@ -4,6 +4,7 @@ import 'package:flutter_steps_tracker/di/injection_container.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home/home_cubit.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home/home_state.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/health_points_and_calories_item.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 
 class HealthPointsAndCalories extends StatefulWidget {
   const HealthPointsAndCalories({Key? key}) : super(key: key);
@@ -50,17 +51,17 @@ class _HealthPointsAndCaloriesState extends State<HealthPointsAndCalories> {
       children: [
         Expanded(
           child: HealthPointsAndCaloriesItem(
-            mainTitle: 'Health Points',
+            mainTitle: S.of(context).healthPoints,
             number: isLoading ? '-' : healthPoints.toString(),
             iconData: Icons.shopping_bag,
             color: Theme.of(context).primaryColor,
-            unit: 'Pts',
+            unit: '',
           ),
         ),
         const SizedBox(width: 16.0),
         Expanded(
           child: HealthPointsAndCaloriesItem(
-            mainTitle: 'Total Steps',
+            mainTitle: S.of(context).totalSteps,
             number: isLoading ? '-' : steps.toString(),
             iconData: Icons.bubble_chart_rounded,
             color: Theme.of(context).backgroundColor,

@@ -6,6 +6,7 @@ import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/ea
 import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/get_rewards_use_case.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/get_user_data_use_case.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards/rewards_state.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
@@ -29,8 +30,8 @@ class RewardsCubit extends Cubit<RewardsState> {
     emit(
       result.fold(
         (failure) {
-          return const RewardsState.userDataError(
-              message: 'Something went wrong!');
+          return RewardsState.userDataError(
+              message: S.current.somethingWentWrong);
         },
         (user) => RewardsState.userDataLoaded(
           points: user.healthPoints,
@@ -45,7 +46,7 @@ class RewardsCubit extends Cubit<RewardsState> {
     emit(
       result.fold(
         (failure) {
-          return const RewardsState.earnError(message: 'Something went wrong!');
+          return RewardsState.earnError(message: S.current.somethingWentWrong);
         },
         (user) => const RewardsState.earnLoaded(),
       ),
@@ -65,6 +66,6 @@ class RewardsCubit extends Cubit<RewardsState> {
 
   void onRewardsError(error) {
     debugPrint('onRewardsError: $error');
-    emit(const RewardsState.error(message: 'Something went wrong!'));
+    emit(RewardsState.error(message: S.current.somethingWentWrong));
   }
 }

@@ -7,6 +7,7 @@ import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/ge
 import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/set_exchange_history_use_case.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/set_steps_and_points_use_case.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/home/home_state.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 import 'package:flutter_steps_tracker/utilities/constants/enums.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pedometer/pedometer.dart';
@@ -33,7 +34,7 @@ class HomeCubit extends Cubit<HomeState> {
     emit(
       result.fold(
         (failure) {
-          return const HomeState.stepsError(message: 'Something went wrong!');
+          return HomeState.stepsError(message: S.current.somethingWentWrong);
         },
         (userData) => HomeState.stepsAndPointsLoaded(
           steps: userData.totalSteps,
@@ -74,7 +75,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   void onStepCountError(error) {
     debugPrint('onStepCountError: $error');
-    _steps = 'Step Count not available';
+    _steps = '?';
     emit(HomeState.error(message: _steps));
   }
 }

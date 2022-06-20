@@ -6,6 +6,7 @@ import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manage
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/leaderboard/leaderboard_state.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/leaderboard_item.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/leaderboard_top_item.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 
 class LeaderboardPage extends StatelessWidget {
   const LeaderboardPage({Key? key}) : super(key: key);
@@ -43,8 +44,8 @@ class LeaderboardPage extends StatelessWidget {
       );
     }
     if (users == null || users.isEmpty) {
-      return const Center(
-        child: Text('No Data Available'),
+      return Center(
+        child: Text(S.of(context).emptyState),
       );
     }
 

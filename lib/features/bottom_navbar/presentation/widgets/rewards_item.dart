@@ -6,6 +6,7 @@ import 'package:flutter_steps_tracker/di/injection_container.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/reward_model.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards/rewards_cubit.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/rewards/rewards_state.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 
 class RewardsItem extends StatefulWidget {
   final RewardModel reward;
@@ -124,7 +125,7 @@ class _RewardsItemState extends State<RewardsItem> {
                 if (widget.reward.points <= points) {
                   showAlertDialog(
                     context,
-                    title: 'QR Code',
+                    title: S.current.qrCode,
                     contentWidget: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -135,13 +136,13 @@ class _RewardsItemState extends State<RewardsItem> {
                           ),
                           const SizedBox(height: 16.0),
                           Text(
-                            'Scan the QR Code and the points will be taken',
+                            S.current.scanQrCode,
                             style: Theme.of(context).textTheme.subtitle1,
                           ),
                         ],
                       ),
                     ),
-                    defaultActionText: 'Dummy Done',
+                    defaultActionText: S.current.dummyDone,
                     cubit: cubit,
                     defaultAction: () async {
                       await cubit.earnAReward(widget.reward);
@@ -150,10 +151,9 @@ class _RewardsItemState extends State<RewardsItem> {
                 } else {
                   showAlertDialog(
                     context,
-                    title: 'Notice',
-                    content:
-                        'Your points are less than the item\'s points, walk more and try again!',
-                    defaultActionText: 'Done',
+                    title: S.current.notice,
+                    content: S.current.pointsLessThanItem,
+                    defaultActionText: S.current.done,
                   );
                 }
               }
@@ -169,7 +169,7 @@ class _RewardsItemState extends State<RewardsItem> {
         ),
         child: !isLoading
             ? Text(
-                'Earn',
+                S.current.earn,
                 style: Theme.of(context).textTheme.subtitle1!.copyWith(
                       color: Theme.of(context).primaryColor,
                     ),

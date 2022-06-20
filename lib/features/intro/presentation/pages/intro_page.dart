@@ -5,6 +5,7 @@ import 'package:flutter_steps_tracker/di/injection_container.dart';
 import 'package:flutter_steps_tracker/features/intro/presentation/manager/auth_actions/auth_cubit.dart';
 import 'package:flutter_steps_tracker/features/intro/presentation/manager/auth_actions/auth_state.dart';
 import 'package:flutter_steps_tracker/features/intro/presentation/manager/auth_status/auth_status_cubit.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
 
 class IntroPage extends StatefulWidget {
@@ -106,7 +107,7 @@ class _IntroPageState extends State<IntroPage> {
             height: 180,
           ),
           Text(
-            'Your All-in one Activity Tracker!',
+            S.of(context).allInOneTrack,
             style: Theme.of(context).textTheme.subtitle1!.copyWith(
                   color: Theme.of(context).scaffoldBackgroundColor,
                 ),
@@ -116,10 +117,11 @@ class _IntroPageState extends State<IntroPage> {
           ),
           TextFormField(
             controller: _nameController,
-            validator: (val) => val!.isEmpty ? 'Enter your name' : null,
+            validator: (val) =>
+                val!.isEmpty ? S.of(context).enterYourName : null,
             autocorrect: false,
-            decoration: const InputDecoration(
-              hintText: 'Enter your name',
+            decoration: InputDecoration(
+              hintText: S.of(context).enterYourName,
             ),
           ),
           const SizedBox(height: 16.0),
@@ -143,7 +145,7 @@ class _IntroPageState extends State<IntroPage> {
               child: Center(
                 child: !isLoading
                     ? Text(
-                        'Start Using Steps',
+                        S.of(context).startUsingSteps,
                         style: Theme.of(context).textTheme.subtitle1!.copyWith(
                               color: Theme.of(context).scaffoldBackgroundColor,
                               fontWeight: FontWeight.bold,

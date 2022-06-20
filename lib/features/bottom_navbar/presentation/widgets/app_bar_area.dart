@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 import 'package:flutter_steps_tracker/utilities/constants/assets.dart';
 import 'package:flutter_steps_tracker/utilities/constants/key_constants.dart';
 import 'package:flutter_steps_tracker/utilities/locale/cubit/utility_cubit.dart';
@@ -27,7 +28,7 @@ class AppBarArea extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
             Text(
-              'Pedometer',
+              S.of(context).pedometer,
               style: Theme.of(context).textTheme.headline6!.copyWith(
                     color: Theme.of(context).primaryColor,
                   ),

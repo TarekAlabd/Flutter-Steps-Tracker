@@ -4,6 +4,7 @@ import 'package:flutter_steps_tracker/core/domain/use_cases/use_case.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/data/models/exchange_history_model.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/domain/use_cases/get_exchanges_history_use_case.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/manager/exchanges_history/exchanges_history_state.dart';
+import 'package:flutter_steps_tracker/generated/l10n.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
@@ -19,8 +20,9 @@ class ExchangesHistoryCubit extends Cubit<ExchangesHistoryState> {
     emit(const ExchangesHistoryState.loading());
     final result = await _getExchangesHistoryUseCase(NoParams());
     result.fold(
-        (_) => emit(const ExchangesHistoryState.error(
-            message: 'Something went wrong!')), (exchangesStream) {
+        (_) => emit(
+            ExchangesHistoryState.error(message: S.current.somethingWentWrong)),
+        (exchangesStream) {
       _exchangesStream = exchangesStream;
       _exchangesStream.listen(onExchangesReceived).onError(onExchangesError);
     });
@@ -33,6 +35,6 @@ class ExchangesHistoryCubit extends Cubit<ExchangesHistoryState> {
 
   void onExchangesError(error) {
     debugPrint('onExchangesError: $error');
-    emit(const ExchangesHistoryState.error(message: 'Something went wrong!'));
+    emit(ExchangesHistoryState.error(message: S.current.somethingWentWrong));
   }
 }
