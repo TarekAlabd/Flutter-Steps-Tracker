@@ -6,8 +6,19 @@ import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widget
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/get_radial_gauge.dart';
 import 'package:flutter_steps_tracker/features/bottom_navbar/presentation/widgets/health_points_and_calories.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    getIt<HomeCubit>().getUserData();
+  }
 
   @override
   Widget build(BuildContext context) {

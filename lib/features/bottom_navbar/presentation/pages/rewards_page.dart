@@ -14,10 +14,9 @@ class RewardsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<RewardsCubit>(
-      create: (context) {
+      create: (_) {
         final cubit = getIt<RewardsCubit>();
         cubit.getRewards();
-        cubit.getUserPoints();
         return cubit;
       },
       child: Builder(builder: (context) {
@@ -44,11 +43,12 @@ class RewardsPage extends StatelessWidget {
                 const SizedBox(height: 12.0),
                 BlocBuilder<RewardsCubit, RewardsState>(
                   bloc: BlocProvider.of<RewardsCubit>(context),
-                  builder: (context, state) {
+                  builder: (_, state) {
                     return state.maybeWhen(
-                      loaded: (rewards) => _buildList(rewards: rewards),
-                      loading: () => _buildList(isLoading: true),
-                      orElse: () => _buildList(),
+                      loaded: (rewards) =>
+                          _buildList(context, rewards: rewards),
+                      loading: () => _buildList(context, isLoading: true),
+                      orElse: () => _buildList(context),
                     );
                   },
                 ),
@@ -60,12 +60,14 @@ class RewardsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildList({bool isLoading = false, List<RewardModel>? rewards}) {
+  Widget _buildList(BuildContext context,
+      {bool isLoading = false, List<RewardModel>? rewards}) {
     if (isLoading) {
       return const Center(
         child: CircularProgressIndicator(),
       );
     }
+    debugPrint('Rewards from the fun: ${rewards?.length}');
     return rewards != null && rewards.isNotEmpty
         ? Column(
             children: rewards
@@ -78,7 +80,12 @@ class RewardsPage extends StatelessWidget {
                 .toList(),
           )
         : Center(
-            child: Text(S.current.emptyState),
+            child: Text(
+              S.current.emptyState,
+              style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                    color: Theme.of(context).primaryColorDark,
+                  ),
+            ),
           );
   }
 }

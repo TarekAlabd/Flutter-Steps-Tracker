@@ -122,8 +122,15 @@ class BottomNavbarRepositoryImpl implements BottomNavbarRepository {
     try {
       final user = await _authLocalDataSource.currentUser();
       await _database.setRewardOrder(
-        reward,
+        reward.copyWith(
+          id: documentIdFromLocalGenerator(),
+        ),
         user!.uid,
+      );
+      var realUserData = await _database.getUserStream(user.uid).first;
+      await _database.setUserData(
+        realUserData.copyWith(
+            healthPoints: realUserData.healthPoints - reward.points),
       );
       return const Right(true);
     } on ApplicationException catch (e) {

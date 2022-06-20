@@ -42,4 +42,22 @@ class RewardModel extends Equatable {
 
   @override
   List<Object?> get props => [id];
+
+  RewardModel copyWith({
+    String? id,
+    String? name,
+    String? description,
+    String? imageUrl,
+    int? points,
+    String? qrCode,
+  }) {
+    return RewardModel(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      description: description ?? this.description,
+      imageUrl: imageUrl ?? this.imageUrl,
+      points: points ?? this.points,
+      qrCode: qrCode ?? this.qrCode,
+    );
+  }
 }

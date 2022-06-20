@@ -35,4 +35,20 @@ class UserModel {
       'healthPoints': healthPoints,
     };
   }
+
+  UserModel copyWith({
+    String? uid,
+    String? name,
+    int? totalSteps,
+    int? totalCalories,
+    int? healthPoints,
+  }) {
+    return UserModel(
+      uid: uid ?? this.uid,
+      name: name ?? this.name,
+      totalSteps: totalSteps ?? this.totalSteps,
+      totalCalories: totalCalories ?? this.totalCalories,
+      healthPoints: healthPoints ?? this.healthPoints,
+    );
+  }
 }

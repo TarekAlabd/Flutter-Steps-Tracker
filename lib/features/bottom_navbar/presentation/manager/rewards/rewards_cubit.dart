@@ -30,9 +30,13 @@ class RewardsCubit extends Cubit<RewardsState> {
     result.fold(
       (failure) => emit(
           RewardsState.userDataError(message: S.current.somethingWentWrong)),
-      (user) => user.listen((event) => RewardsState.userDataLoaded(
+      (user) => user.listen(
+        (event) => emit(
+          RewardsState.userDataLoaded(
             points: event.healthPoints,
-          )),
+          ),
+        ),
+      ),
     );
   }
 

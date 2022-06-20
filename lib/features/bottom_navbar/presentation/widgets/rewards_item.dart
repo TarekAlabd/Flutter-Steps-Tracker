@@ -21,13 +21,13 @@ class RewardsItem extends StatefulWidget {
 }
 
 class _RewardsItemState extends State<RewardsItem> {
-  late final RewardsCubit cubit;
+  late RewardsCubit _cubit;
 
   @override
   void initState() {
     super.initState();
-    cubit = getIt<RewardsCubit>();
-    cubit.getUserPoints();
+    _cubit = getIt<RewardsCubit>();
+    _cubit.getUserPoints();
   }
 
   @override
@@ -81,8 +81,7 @@ class _RewardsItemState extends State<RewardsItem> {
                       ),
                       const SizedBox(height: 6.0),
                       BlocBuilder<RewardsCubit, RewardsState>(
-                        key: UniqueKey(),
-                        bloc: cubit,
+                        bloc: _cubit,
                         buildWhen: (prev, current) =>
                             current is UserDataLoading ||
                             current is UserDataLoaded,
@@ -143,9 +142,9 @@ class _RewardsItemState extends State<RewardsItem> {
                       ),
                     ),
                     defaultActionText: S.current.dummyDone,
-                    cubit: cubit,
+                    cubit: _cubit,
                     defaultAction: () async {
-                      await cubit.earnAReward(widget.reward);
+                      await _cubit.earnAReward(widget.reward);
                     },
                   );
                 } else {
