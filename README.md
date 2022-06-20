@@ -8,7 +8,7 @@ So you may find some workarounds that will be more accurate and better after add
 
 ## Quick Start 🚀
 
-
+![Intro Page](https://github.com/TarekAlabd/Flutter-Steps-Tracker/blob/master/assets/screenshots/1.png)
 
 ## Feature Set ✨
 
